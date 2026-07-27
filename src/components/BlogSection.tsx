@@ -65,65 +65,16 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs font-bold uppercase tracking-wider">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Interactive Blog Engine & User Reviews</span>
+              <span>Technical Publications & Research Articles</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Educational Insights, Code & Community Ratings
+              EdTech Software, CBC STEM & Analytics Articles
             </h2>
             
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Read Teacher Kelly's research articles on CBC Mathematics, web development tutorials, and SPSS statistics. Write new posts, leave 5-star ratings, and download full articles!
+              Explore Teacher Kelly's published technical guides, CBC Mathematics pedagogy frameworks, M-Pesa web integration tutorials, and empirical statistical research methodology.
             </p>
-          </div>
-
-          {/* User Auth & Quick Action Bar */}
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            {currentUser ? (
-              <div className="flex items-center gap-2 bg-slate-950 p-2 rounded-2xl border border-slate-800 font-mono text-xs">
-                <div className="w-8 h-8 rounded-xl bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center">
-                  {currentUser.avatarInitials}
-                </div>
-                <div className="text-left pr-2">
-                  <span className="text-white font-bold block">{currentUser.name}</span>
-                  <span className="text-[10px] text-amber-400 uppercase font-mono">
-                    {currentUser.role === 'admin' ? '🛡️ Educator (Admin)' : '👤 Reader Account'}
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <button
-                onClick={onOpenAuth}
-                className="px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-amber-500/30 text-amber-400 font-mono text-xs font-bold flex items-center gap-2 transition-all"
-              >
-                <Lock className="w-4 h-4" />
-                <span>Login / Sign Up</span>
-              </button>
-            )}
-
-            {/* Write New Blog Post Button */}
-            <button
-              onClick={() => {
-                if (!currentUser) {
-                  onOpenAuth();
-                } else {
-                  onOpenWriter(null);
-                }
-              }}
-              className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold font-mono text-xs flex items-center gap-2 shadow-lg shadow-amber-500/20 transition-all uppercase tracking-wider"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Write Blog</span>
-            </button>
-
-            {/* Rate Me Button */}
-            <button
-              onClick={onOpenRateModal}
-              className="px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-700 text-white font-mono text-xs font-bold flex items-center gap-2 transition-all"
-            >
-              <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-              <span>Rate Me ({avgPortfolioRating}★)</span>
-            </button>
           </div>
         </div>
 

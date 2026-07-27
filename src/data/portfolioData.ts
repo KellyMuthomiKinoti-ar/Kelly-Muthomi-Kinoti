@@ -5,15 +5,15 @@ export const PERSONAL_INFO = {
   initials: 'KMK',
   profileImage: 'https://lh3.googleusercontent.com/d/1OJiIK5LYfwZscXDruBn-Hnz1P87EX24x',
   tscNo: 'Licensed & Registered',
-  headline: 'TSC-Registered Educator | Mathematics, Business Studies & Computer Science Teacher | Full-Stack Web Developer | WordPress Specialist | Academic Researcher & Data Analyst',
-  shortTitle: 'Full-Stack Developer, Educator & Data Analyst',
+  headline: 'Full-Stack Web Developer & STEM Educator | EdTech Software Engineer, PHP/React Architect & Data Analyst',
+  shortTitle: 'Full-Stack Developer & STEM Educator',
   location: 'Nairobi, Kenya',
   phone: '+254 708 220 323',
   phoneClean: '+254708220323',
   email: 'kellymuthomi22@gmail.com',
   linkedin: 'https://www.linkedin.com/in/kelly-muthomi-104760155/',
-  github: 'https://github.com',
-  summary: 'Highly motivated and results-driven TSC-registered educator, full-stack web developer, academic researcher, and data analyst with 6+ years of experience across education, software development, digital transformation, and statistical research. Holds a Bachelor of Arts in Education (Business Studies & Mathematics) from Moi University. Expert in bridging technology and education by delivering CBC-aligned STEM instruction, engineering modern web solutions, and leading quantitative/qualitative research projects.',
+  github: 'https://github.com/kellymuthomi',
+  summary: 'Full-stack web developer and TSC-registered STEM educator specializing in EdTech software engineering, PHP/React web applications, relational database design, and statistical data analytics. Holds a B.A. in Education (Business Studies & Mathematics) from Moi University with 6+ years combining software engineering, ICT leadership, and empirical research.',
   livePortfolios: [
     { name: 'StyledKid E-Commerce', url: 'https://styledkid.co.ke' },
     { name: 'WildLens Adventure', url: 'https://wildlensadventure.com' },
@@ -24,28 +24,28 @@ export const PERSONAL_INFO = {
 export const CAREER_MILESTONES = [
   {
     value: '6+',
-    label: 'Years Experience',
-    detail: 'Education, ICT Integration, Web Dev & Research'
-  },
-  {
-    value: 'TSC #1030686',
-    label: 'Fully Licensed',
-    detail: 'Mathematics, Business & Computer Studies'
-  },
-  {
-    value: 'KEMI',
-    label: 'Certified Admin',
-    detail: 'KEMIS Data & System Operations'
+    label: 'Years Combined Exp.',
+    detail: 'Full-Stack Web Engineering & STEM Pedagogy'
   },
   {
     value: 'Full-Stack',
     label: 'Web Architect',
-    detail: 'E-Commerce, CMS & EdTech Web Applications'
+    detail: 'PHP, React, MySQL, WordPress & EdTech Applications'
+  },
+  {
+    value: 'TSC Licensed',
+    label: 'STEM Educator',
+    detail: 'Mathematics, Computer Studies & Business Education'
+  },
+  {
+    value: 'KEMI',
+    label: 'Certified Admin',
+    detail: 'KEMIS Education Data & System Operations'
   },
   {
     value: 'Statistical',
-    label: 'Research Expert',
-    detail: 'SPSS, SAS, STATA & Advanced Excel'
+    label: 'Research Analyst',
+    detail: 'SPSS, SAS, STATA & Advanced Data Modeling'
   }
 ];
 
@@ -56,6 +56,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Full-Stack E-Commerce Web Platform',
     category: 'e-commerce',
     link: 'https://styledkid.co.ke',
+    githubUrl: 'https://github.com/kellymuthomi/styledkid-ecommerce',
     displayUrl: 'styledkid.co.ke',
     techStack: ['PHP', 'MySQL', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'WordPress', 'XAMPP'],
     features: [
@@ -74,6 +75,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Safari & Tourism Booking Engine',
     category: 'web-app',
     link: 'https://wildlensadventure.com',
+    githubUrl: 'https://github.com/kellymuthomi/wildlens-safari-engine',
     displayUrl: 'wildlensadventure.com',
     techStack: ['WordPress', 'Custom PHP', 'JavaScript', 'HTML5', 'CSS3', 'SEO Tools'],
     features: [
@@ -92,6 +94,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'School Management & Digital Visibility Web App',
     category: 'edtech',
     link: 'https://menwe-school.vercel.app/',
+    githubUrl: 'https://github.com/kellymuthomi/menwe-school-webapp',
     displayUrl: 'menwe-school.vercel.app',
     techStack: ['Next.js / React', 'Web Architecture', 'Vercel Cloud Hosting', 'UI/UX Design'],
     features: [
@@ -113,7 +116,7 @@ export const EXPERIENCES: Experience[] = [
     organization: 'Menwe Junior School',
     period: 'January 2025 – Present',
     isCurrent: true,
-    location: 'Nairobi / Kenya',
+    location: 'Nairobi, Kenya',
     responsibilities: [
       'Deliver competency-based instruction (CBC) in Mathematics, Business Studies, and Computer Studies for junior secondary learners.',
       'Develop learner-centered lesson plans, conduct practical ICT lab sessions, and foster digital literacy across student body.',
@@ -126,6 +129,26 @@ export const EXPERIENCES: Experience[] = [
       'Implemented hands-on computer science & STEM workshops'
     ],
     techAndTools: ['CBC STEM Pedagogy', 'KEMIS Admin', 'Next.js', 'Vercel', 'Computer Science Teaching']
+  },
+  {
+    id: 'independent-tech-consultant',
+    role: 'Independent Full-Stack Web Developer & Data Consultant',
+    organization: 'Independent Software Engineering & Statistical Consulting',
+    period: '2022 – 2025',
+    isCurrent: false,
+    location: 'Nairobi / Remote',
+    responsibilities: [
+      'Engineered custom full-stack web applications, e-commerce platforms, and database solutions for regional businesses and educational clients.',
+      'Designed and executed statistical data models (SPSS, STATA, SAS) and quantitative analytics for research projects and educational evaluations.',
+      'Built custom administrative dashboards, client portals, and responsive CMS solutions using PHP, React, MySQL, and Tailwind CSS.',
+      'Provided digital transformation consulting to schools and small enterprises transitioning to web-based management.'
+    ],
+    highlights: [
+      'Engineered 3 major live production platforms (StyledKid, WildLens, Menwe School)',
+      'Built automated inventory and M-Pesa payment integration prototypes',
+      'Delivered data analytics and statistical modeling for 100+ research projects'
+    ],
+    techAndTools: ['Full-Stack Web Dev', 'PHP & React', 'MySQL', 'SPSS Analytics', 'M-Pesa Integration', 'Data Modeling']
   },
   {
     id: 'secondary-educator',
@@ -146,27 +169,6 @@ export const EXPERIENCES: Experience[] = [
       'Guided student ICT club projects in software basic logic'
     ],
     techAndTools: ['KCSE Curriculum', 'Programming Logic', 'Assessment Analytics', 'MS Excel', 'Database Management']
-  },
-  {
-    id: 'freelance-developer-researcher',
-    role: 'Lead Full-Stack Web Developer & Academic Researcher',
-    organization: 'Freelance / Global Academic Platforms (Studybay, Fiverr, Studypool, Uvocorp)',
-    period: 'April 2018 – Present',
-    isCurrent: true,
-    location: 'Remote / Global',
-    platforms: ['Studybay', 'Fiverr', 'Studypool', 'Uvocorp'],
-    responsibilities: [
-      'Full-Stack Web Engineering: Design, develop, and maintain custom web applications, e-commerce stores, and WordPress CMS sites using PHP, MySQL, JavaScript, REST APIs, and modern AI development tooling (Lovable).',
-      'Research & Data Analytics: Execute quantitative and qualitative statistical modeling, survey/questionnaire design, hypothesis testing, and interactive data visualization using SPSS, SAS, STATA, and Advanced Excel.',
-      'Editorial & Compliance: Produce technical documentation, code explanations, and research manuscripts adhering strictly to APA, MLA, Harvard, IEEE, and Chicago formatting guidelines.',
-      'Client Relationship & Quality: Partner with global clients to diagnose software requirements, deliver clean code, and provide data-driven insights with 100% compliance to specifications.'
-    ],
-    highlights: [
-      '5-Star rated technical writer & data analyst on international platforms',
-      'Delivered 300+ successful software projects and research manuscripts',
-      'Expert in cross-disciplinary statistical analysis (SPSS, STATA, SAS)'
-    ],
-    techAndTools: ['PHP', 'MySQL', 'JavaScript', 'SPSS', 'STATA', 'SAS', 'Advanced Excel', 'APA/IEEE Writing', 'WordPress']
   }
 ];
 
@@ -235,90 +237,63 @@ export const EDUCATION_LIST: EducationItem[] = [
 export const SKILL_CATEGORIES: SkillCategoryGroup[] = [
   {
     id: 'web-dev',
-    title: 'Programming & Web Development',
-    description: 'Full-stack engineering, database design, and modern CMS customization',
+    title: 'Software Engineering & Web Development',
+    description: 'Full-stack web applications, relational databases, APIs, and modern CMS platforms',
     icon: 'Code',
     skills: [
-      { name: 'PHP', category: 'Programming', level: 92, badgeType: 'primary' },
-      { name: 'MySQL Database Design', category: 'Database', level: 90, badgeType: 'primary' },
-      { name: 'JavaScript (ES6+)', category: 'Programming', level: 88, badgeType: 'primary' },
-      { name: 'HTML5 & CSS3', category: 'Frontend', level: 95, badgeType: 'primary' },
-      { name: 'WordPress Development', category: 'CMS', level: 94, badgeType: 'primary' },
-      { name: 'REST API Integration', category: 'Backend', level: 85, badgeType: 'secondary' },
-      { name: 'Responsive Web Design', category: 'UI/UX', level: 96, badgeType: 'primary' },
-      { name: 'E-Commerce Engineering', category: 'Web Dev', level: 90, badgeType: 'accent' },
-      { name: 'Local Env (XAMPP)', category: 'DevOps', level: 92, badgeType: 'secondary' },
-      { name: 'AI Development (Lovable)', category: 'AI Tools', level: 88, badgeType: 'highlight' },
-      { name: 'Next.js & React', category: 'Frontend', level: 84, badgeType: 'primary' }
+      { name: 'PHP', category: 'Backend Language', level: 95, badgeType: 'primary' },
+      { name: 'MySQL Relational Schema', category: 'Database', level: 92, badgeType: 'primary' },
+      { name: 'JavaScript (ES6+) & TypeScript', category: 'Frontend', level: 90, badgeType: 'primary' },
+      { name: 'React & Next.js Frameworks', category: 'Frontend', level: 88, badgeType: 'primary' },
+      { name: 'HTML5 & Tailwind CSS', category: 'UI / Styling', level: 95, badgeType: 'primary' },
+      { name: 'WordPress Core Development', category: 'CMS Architecture', level: 94, badgeType: 'primary' },
+      { name: 'RESTful APIs & M-Pesa Integration', category: 'Integrations', level: 90, badgeType: 'highlight' },
+      { name: 'Git & GitHub Version Control', category: 'Dev Tools', level: 92, badgeType: 'accent' },
+      { name: 'XAMPP Local Server Stack', category: 'DevOps', level: 90, badgeType: 'secondary' },
+      { name: 'AI Development Tools', category: 'Workflow', level: 88, badgeType: 'highlight' }
     ]
   },
   {
     id: 'research-data',
-    title: 'Research & Data Analytics',
-    description: 'Statistical modeling, software packages, survey design & quantitative research',
+    title: 'Data Analytics & Research Methodology',
+    description: 'Statistical software packages, quantitative modeling, data visualization & hypothesis testing',
     icon: 'BarChart3',
     skills: [
-      { name: 'SPSS', category: 'Statistics', level: 95, badgeType: 'highlight' },
-      { name: 'STATA', category: 'Statistics', level: 90, badgeType: 'highlight' },
-      { name: 'SAS', category: 'Statistics', level: 86, badgeType: 'highlight' },
-      { name: 'Advanced MS Excel', category: 'Analytics', level: 96, badgeType: 'primary' },
-      { name: 'Quantitative Research', category: 'Research', level: 94, badgeType: 'primary' },
-      { name: 'Qualitative Research', category: 'Research', level: 90, badgeType: 'primary' },
-      { name: 'Statistical Modeling', category: 'Data Science', level: 92, badgeType: 'accent' },
-      { name: 'Survey & Questionnaire Design', category: 'Data', level: 92, badgeType: 'secondary' },
-      { name: 'Data Visualization', category: 'Analytics', level: 88, badgeType: 'accent' },
-      { name: 'Literature Reviews', category: 'Research', level: 95, badgeType: 'secondary' },
-      { name: 'Research Methodology', category: 'Academia', level: 95, badgeType: 'primary' }
+      { name: 'SPSS Analysis Package', category: 'Statistics', level: 96, badgeType: 'highlight' },
+      { name: 'STATA Data Analytics', category: 'Statistics', level: 92, badgeType: 'highlight' },
+      { name: 'SAS Statistical Suite', category: 'Statistics', level: 88, badgeType: 'highlight' },
+      { name: 'Advanced MS Excel (VLOOKUP, Pivot)', category: 'Data Analysis', level: 95, badgeType: 'primary' },
+      { name: 'Quantitative & Empirical Research', category: 'Methodology', level: 94, badgeType: 'primary' },
+      { name: 'Statistical Modeling & Regression', category: 'Data Science', level: 92, badgeType: 'accent' },
+      { name: 'Survey & Questionnaire Design', category: 'Data Capture', level: 90, badgeType: 'secondary' },
+      { name: 'Interactive Data Visualization', category: 'Reporting', level: 90, badgeType: 'accent' }
     ]
   },
   {
     id: 'education-pedagogy',
-    title: 'Education & Pedagogy',
-    description: 'STEM instruction, CBC curriculum execution, and educational technology',
+    title: 'STEM Education & Institutional Tech',
+    description: 'Mathematics, Business Studies & Computer Science instruction, CBC curriculum & KEMIS admin',
     icon: 'GraduationCap',
     skills: [
-      { name: 'Mathematics Instruction', category: 'Pedagogy', level: 96, badgeType: 'primary' },
-      { name: 'Business Studies Education', category: 'Pedagogy', level: 94, badgeType: 'primary' },
-      { name: 'Computer Studies Instruction', category: 'STEM', level: 95, badgeType: 'primary' },
-      { name: 'CBC Curriculum Implementation', category: 'Education', level: 92, badgeType: 'highlight' },
-      { name: 'STEM Education', category: 'STEM', level: 94, badgeType: 'accent' },
-      { name: 'EdTech Integration', category: 'EdTech', level: 95, badgeType: 'highlight' },
-      { name: 'Student Assessment & Evaluation', category: 'Pedagogy', level: 92, badgeType: 'secondary' },
-      { name: 'Digital Literacy Facilitation', category: 'ICT', level: 96, badgeType: 'primary' },
-      { name: 'KEMIS Administration', category: 'Gov Tech', level: 95, badgeType: 'highlight' }
+      { name: 'Mathematics Instruction', category: 'STEM Curriculum', level: 96, badgeType: 'primary' },
+      { name: 'Computer Studies Pedagogy', category: 'STEM Curriculum', level: 95, badgeType: 'primary' },
+      { name: 'Business Education', category: 'Curriculum', level: 94, badgeType: 'primary' },
+      { name: 'CBC (Competency Based) Curriculum', category: 'Education', level: 94, badgeType: 'highlight' },
+      { name: 'KEMIS System Administration', category: 'GovTech Admin', level: 95, badgeType: 'highlight' },
+      { name: 'EdTech & Digital Classroom Integration', category: 'EdTech', level: 95, badgeType: 'highlight' },
+      { name: 'Student Academic Assessment Tools', category: 'Evaluation', level: 92, badgeType: 'secondary' }
     ]
   },
   {
     id: 'publishing-doc',
-    title: 'Publishing & Documentation',
-    description: 'Academic formatting styles, technical writing, and peer review standards',
+    title: 'Technical Writing & Documentation',
+    description: 'Software documentation, academic research publishing & technical specifications',
     icon: 'FileText',
     skills: [
-      { name: 'APA Citation Style', category: 'Academic', level: 98, badgeType: 'primary' },
-      { name: 'MLA Citation Style', category: 'Academic', level: 96, badgeType: 'primary' },
-      { name: 'Harvard Citation Style', category: 'Academic', level: 95, badgeType: 'primary' },
-      { name: 'IEEE Citation Style', category: 'Technical', level: 94, badgeType: 'accent' },
-      { name: 'Chicago Citation Style', category: 'Academic', level: 92, badgeType: 'secondary' },
-      { name: 'Technical Writing', category: 'Writing', level: 95, badgeType: 'primary' },
-      { name: 'Track Changes & QA', category: 'Editing', level: 96, badgeType: 'secondary' },
-      { name: 'Proofreading & Editing', category: 'Writing', level: 95, badgeType: 'secondary' },
-      { name: 'Google Workspace', category: 'Productivity', level: 95, badgeType: 'primary' },
-      { name: 'MS Office Suite', category: 'Productivity', level: 98, badgeType: 'primary' }
-    ]
-  },
-  {
-    id: 'leadership-pro',
-    title: 'Professional & Leadership Skills',
-    description: 'Project management, critical thinking, client engagement, and problem solving',
-    icon: 'Users',
-    skills: [
-      { name: 'Leadership', category: 'Management', level: 92, badgeType: 'primary' },
-      { name: 'Project Management', category: 'Management', level: 90, badgeType: 'primary' },
-      { name: 'Client Relationship Management', category: 'Client Success', level: 94, badgeType: 'accent' },
-      { name: 'Critical Thinking', category: 'Core', level: 96, badgeType: 'primary' },
-      { name: 'Team Collaboration', category: 'Core', level: 95, badgeType: 'secondary' },
-      { name: 'Time Management', category: 'Productivity', level: 94, badgeType: 'secondary' },
-      { name: 'Problem Solving', category: 'Core', level: 96, badgeType: 'primary' }
+      { name: 'Technical Documentation & Specifications', category: 'Engineering', level: 95, badgeType: 'primary' },
+      { name: 'Academic Research Manuscripts (APA/IEEE)', category: 'Publishing', level: 96, badgeType: 'accent' },
+      { name: 'Peer Review & Quality Assurance', category: 'Editorial', level: 94, badgeType: 'secondary' },
+      { name: 'Project Proposals & Feasibility Reports', category: 'Documentation', level: 92, badgeType: 'primary' }
     ]
   }
 ];

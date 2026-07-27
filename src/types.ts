@@ -6,6 +6,7 @@ export interface Project {
   subtitle: string;
   category: 'e-commerce' | 'web-app' | 'edtech';
   link: string;
+  githubUrl?: string;
   displayUrl: string;
   techStack: string[];
   features: string[];

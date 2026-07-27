@@ -149,18 +149,12 @@ export const SkillsSection: React.FC = () => {
                           </span>
                         </div>
 
-                        {/* Skill Progress Indicator Bar */}
-                        <div className="mt-2 space-y-1">
-                          <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
-                            <span>Proficiency</span>
-                            <span className="text-amber-400 font-bold">{skill.level}%</span>
-                          </div>
-                          <div className="w-full bg-slate-950 h-1.5 rounded-full overflow-hidden border border-slate-800">
-                            <div
-                              className="h-full bg-amber-500 rounded-full transition-all duration-500"
-                              style={{ width: `${skill.level}%` }}
-                            />
-                          </div>
+                        {/* Skill Qualitative Badge */}
+                        <div className="mt-3 flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
+                          <span className="text-[11px] font-mono text-slate-400">Level:</span>
+                          <span className="font-mono text-xs font-bold text-amber-400 bg-slate-950 px-2.5 py-0.5 rounded-md border border-slate-800">
+                            {skill.level >= 95 ? '⭐ Expert' : skill.level >= 90 ? '🔥 Advanced' : '✓ Proficient'}
+                          </span>
                         </div>
                       </div>
                     );
