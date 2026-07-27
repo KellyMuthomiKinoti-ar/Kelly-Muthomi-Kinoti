@@ -33,8 +33,8 @@ export const SummarySection: React.FC = () => {
     },
     {
       icon: BarChart3,
-      title: 'Global Research & Data Analyst',
-      detail: 'Conducted advanced statistical analytics using SPSS, SAS, STATA, and Advanced Excel for global platforms (Studybay, Fiverr, Studypool, Uvocorp).',
+      title: 'Statistical Data Analyst & Researcher',
+      detail: 'Conducted advanced statistical analytics using SPSS, SAS, STATA, and Advanced Excel for independent software consulting and empirical research projects.',
       tag: 'SPSS • STATA • SAS'
     }
   ];

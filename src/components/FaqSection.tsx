@@ -36,7 +36,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-6',
     question: 'Where is Kelly based, and is he available for remote or on-site engagements?',
-    answer: 'Kelly is based in Nairobi, Kenya. He is available for on-site teaching and consultations across Kenya, as well as remote web development and data research contracts globally.',
+    answer: 'Kelly is based in Nairobi, Kenya. He is available for remote full-stack software engineering positions globally, as well as local Kenya on-site software engineering and STEM education roles.',
     category: 'general'
   }
 ];

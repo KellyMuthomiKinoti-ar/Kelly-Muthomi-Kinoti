@@ -314,7 +314,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
               6+ Years Industry & Teaching
             </span>
             <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold">
-              Available for Consultations
+              Available for Remote & On-Site Roles
             </span>
           </div>
 

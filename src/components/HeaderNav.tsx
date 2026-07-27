@@ -145,11 +145,11 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
           <div className="flex items-center gap-4">
             <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              TSC Registered Educator • Licensed
+              Full-Stack Web Developer & STEM Educator
             </span>
             <span className="text-slate-700">•</span>
             <span className="text-amber-400 font-semibold">
-              Available for Consultations & Projects
+              Available for Remote & On-Site Engineering Roles
             </span>
           </div>
         </div>
