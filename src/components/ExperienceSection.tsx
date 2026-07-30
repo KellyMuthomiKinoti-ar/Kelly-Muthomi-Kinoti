@@ -49,17 +49,17 @@ export const ExperienceSection: React.FC = () => {
                 </div>
 
                 {/* Card Container */}
-                <div className="bg-slate-900/70 hover:bg-slate-900 border border-slate-700/60 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-xl backdrop-blur-md">
+                <div className="bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-lg backdrop-blur-md">
                   
                   {/* Card Header Top */}
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2 mb-4">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                        <span className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors tracking-tight">
                           {exp.role}
                         </span>
                         {exp.isCurrent && (
-                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500 text-slate-950 uppercase">
+                          <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-500 text-slate-950 uppercase tracking-wider">
                             Active
                           </span>
                         )}
@@ -78,13 +78,13 @@ export const ExperienceSection: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-amber-400 text-xs font-mono font-bold">
+                      <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-amber-400 text-xs font-mono font-bold">
                         <Calendar className="w-3.5 h-3.5 text-amber-400" />
                         <span>{exp.period}</span>
                       </div>
                       <button
                         onClick={() => toggleExpand(exp.id)}
-                        className="p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 hover:text-white"
+                        className="p-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
                         title={isExpanded ? "Collapse Details" : "Expand Details"}
                       >
                         {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}

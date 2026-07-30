@@ -58,22 +58,22 @@ export const TeachingPhilosophySection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-slate-900/80 border border-slate-800/90 hover:border-amber-500/40 rounded-3xl p-6 space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg group"
+                className="bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 space-y-4 flex flex-col justify-between transition-all duration-300 shadow-lg group backdrop-blur-md"
               >
                 <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all shadow-md">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-11 h-11 rounded-xl bg-slate-950 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all shadow-md">
+                    <Icon className="w-5 h-5" />
                   </div>
 
                   <span className="text-[11px] font-mono font-bold text-amber-400 uppercase tracking-wider block">
                     {pillar.subtitle}
                   </span>
 
-                  <h3 className="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors tracking-tight">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
                     {pillar.description}
                   </p>
                 </div>

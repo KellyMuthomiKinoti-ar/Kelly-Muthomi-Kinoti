@@ -37,17 +37,17 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ on
           {CERTIFICATIONS.map((cert) => (
             <div
               key={cert.id}
-              className="bg-slate-900/70 hover:bg-slate-900 border border-slate-700/60 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-xl flex flex-col justify-between group backdrop-blur-md"
+              className="bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-lg flex flex-col justify-between group backdrop-blur-md"
             >
               <div>
                 {/* Header Badge */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-amber-500/20">
-                      <ShieldCheck className="w-6 h-6" />
+                    <div className="w-12 h-12 rounded-xl bg-slate-950 border border-amber-500/40 flex items-center justify-center text-amber-400 font-black shadow-md">
+                      <ShieldCheck className="w-6 h-6 text-amber-400" />
                     </div>
                     <div>
-                      <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                      <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap">
                         {cert.badge}
                       </span>
                       {cert.regNumber && (
@@ -60,7 +60,7 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ on
 
                   <button
                     onClick={() => onOpenCertModal(cert)}
-                    className="p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-500/50 transition-colors flex items-center gap-1.5 text-xs font-mono font-semibold"
+                    className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors flex items-center gap-1.5 text-xs font-mono font-semibold"
                     title="View Credential Card"
                   >
                     <span>Inspect</span>
@@ -69,7 +69,7 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ on
                 </div>
 
                 {/* Title & Issuing Body */}
-                <h3 className="text-2xl font-bold text-white group-hover:text-amber-300 transition-colors mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors mb-2 tracking-tight">
                   {cert.title}
                 </h3>
                 <p className="text-xs font-mono text-amber-400 mb-4 flex items-center gap-1.5 font-semibold">
@@ -77,13 +77,13 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ on
                   <span>{cert.issuingBody}</span>
                 </p>
 
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
                   {cert.description}
                 </p>
 
                 {/* Topics Covered (if KEMIS) */}
                 {cert.topics && (
-                  <div className="space-y-3 mb-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                  <div className="space-y-3 mb-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
                     <span className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold block">
                       Certified Topics & Modules Covered:
                     </span>

@@ -127,7 +127,7 @@ export const TestimonialsSection: React.FC = () => {
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="bg-slate-900/80 border border-slate-800/90 hover:border-amber-500/40 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 group"
+              className="bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 sm:p-7 space-y-6 flex flex-col justify-between transition-all duration-300 shadow-lg group backdrop-blur-md"
             >
               <div className="space-y-4">
                 
@@ -137,14 +137,13 @@ export const TestimonialsSection: React.FC = () => {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-slate-950 border border-slate-800 text-amber-400 text-[11px] font-mono font-bold flex items-center gap-1">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-amber-400 text-[11px] font-mono font-bold flex items-center gap-1 whitespace-nowrap">
                     <ShieldCheck className="w-3 h-3 text-amber-400" />
                     {item.badge}
                   </span>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed italic relative">
-                  <Quote className="w-8 h-8 text-slate-800 absolute -top-3 -left-3 pointer-events-none" />
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed italic relative pl-2 border-l-2 border-amber-500/40">
                   "{item.quote}"
                 </p>
 
@@ -152,15 +151,15 @@ export const TestimonialsSection: React.FC = () => {
 
               {/* Author Footer */}
               <div className="flex items-center gap-3 border-t border-slate-800/80 pt-4">
-                <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-extrabold text-sm shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-slate-950 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold text-sm shrink-0">
                   {item.avatarInitials}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
                     {item.name}
                   </h4>
                   <p className="text-xs text-slate-400 font-mono">
-                    {item.role} • <strong className="text-slate-300">{item.organization}</strong>
+                    {item.role} • <strong className="text-slate-300 font-normal">{item.organization}</strong>
                   </p>
                 </div>
               </div>

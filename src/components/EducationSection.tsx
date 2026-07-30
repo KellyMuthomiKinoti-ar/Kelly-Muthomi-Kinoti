@@ -29,19 +29,19 @@ export const EducationSection: React.FC = () => {
           {EDUCATION_LIST.map((item) => (
             <div
               key={item.id}
-              className="bg-slate-900/70 hover:bg-slate-900 border border-slate-700/60 hover:border-amber-500/50 p-6 sm:p-8 rounded-2xl transition-all duration-300 shadow-xl flex flex-col justify-between group backdrop-blur-md"
+              className="bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-6 sm:p-7 rounded-2xl transition-all duration-300 shadow-lg flex flex-col justify-between group backdrop-blur-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-700 text-amber-400 flex items-center justify-center font-bold group-hover:bg-amber-500/10 group-hover:border-amber-500/50 transition-colors">
-                    <GraduationCap className="w-6 h-6" />
+                  <div className="w-11 h-11 rounded-xl bg-slate-950 border border-amber-500/40 text-amber-400 flex items-center justify-center font-bold shadow-md">
+                    <GraduationCap className="w-5 h-5 text-amber-400" />
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-mono bg-slate-950 text-amber-400 font-bold border border-slate-700">
+                  <span className="px-3 py-1 rounded-md text-xs font-mono bg-slate-950 text-amber-400 font-bold border border-slate-800 whitespace-nowrap">
                     {item.year}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors mb-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors mb-2 tracking-tight">
                   {item.qualification}
                 </h3>
 
@@ -50,7 +50,7 @@ export const EducationSection: React.FC = () => {
                   <span>{item.institution}</span>
                 </p>
 
-                <p className="text-slate-300 text-xs leading-relaxed font-light mb-6">
+                <p className="text-slate-300 text-xs leading-relaxed font-normal mb-6">
                   {item.description}
                 </p>
               </div>

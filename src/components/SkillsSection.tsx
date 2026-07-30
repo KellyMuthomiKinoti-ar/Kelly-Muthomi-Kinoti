@@ -107,7 +107,7 @@ export const SkillsSection: React.FC = () => {
             {filteredCategories.map((group) => (
               <div
                 key={group.id}
-                className="bg-slate-900/70 border border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md"
+                className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg backdrop-blur-md"
               >
                 {/* Group Title */}
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
@@ -118,41 +118,32 @@ export const SkillsSection: React.FC = () => {
                     </h3>
                     <p className="text-xs text-slate-400 mt-1 font-light">{group.description}</p>
                   </div>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-amber-400 font-bold border border-slate-700">
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-amber-400 font-bold border border-slate-800">
                     {group.skills.length} Competencies
                   </span>
                 </div>
 
                 {/* Skills Visual Badges Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                   {group.skills.map((skill, sIdx) => {
-                    let badgeStyle = 'bg-slate-950 border-slate-700/80 text-slate-200';
-                    if (skill.badgeType === 'highlight') {
-                      badgeStyle = 'bg-amber-950/40 border-amber-500/30 text-amber-300';
-                    } else if (skill.badgeType === 'accent') {
-                      badgeStyle = 'bg-slate-900 border-amber-500/20 text-amber-200';
-                    } else if (skill.badgeType === 'primary') {
-                      badgeStyle = 'bg-amber-500/10 border-amber-500/30 text-amber-300';
-                    }
-
                     return (
                       <div
                         key={sIdx}
-                        className={`p-4 rounded-xl border transition-all duration-200 hover:scale-[1.02] flex flex-col justify-between ${badgeStyle}`}
+                        className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/80 hover:border-amber-500/30 transition-all duration-200 flex flex-col justify-between"
                       >
-                        <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center justify-between gap-2 mb-2">
                           <span className="font-bold text-sm text-white">
                             {skill.name}
                           </span>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950 text-slate-400 border border-slate-700">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-900 text-slate-400 border border-slate-800 shrink-0">
                             {skill.category}
                           </span>
                         </div>
 
                         {/* Skill Qualitative Badge */}
-                        <div className="mt-3 flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
+                        <div className="mt-2 flex items-center justify-between pt-2 border-t border-slate-900 text-xs">
                           <span className="text-[11px] font-mono text-slate-400">Level:</span>
-                          <span className="font-mono text-xs font-bold text-amber-400 bg-slate-950 px-2.5 py-0.5 rounded-md border border-slate-800">
+                          <span className="font-mono text-[11px] font-semibold text-amber-400 bg-slate-900 px-2 py-0.5 rounded-md border border-slate-800">
                             {skill.level >= 95 ? '⭐ Expert' : skill.level >= 90 ? '🔥 Advanced' : '✓ Proficient'}
                           </span>
                         </div>

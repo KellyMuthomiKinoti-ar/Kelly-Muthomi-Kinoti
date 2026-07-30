@@ -107,19 +107,19 @@ export const ProjectsSection: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-slate-900/70 hover:bg-slate-900 border border-slate-700/60 hover:border-amber-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between shadow-xl group hover:shadow-2xl hover:shadow-amber-500/10 backdrop-blur-md"
+              className="bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between shadow-lg group backdrop-blur-md"
             >
               <div>
                 {/* Header Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-semibold uppercase bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap">
                     {project.badge}
                   </span>
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 hover:text-amber-400 hover:border-amber-500/50 transition-colors"
+                    className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
                     title="Open Live Website"
                   >
                     <ArrowUpRight className="w-4 h-4" />
@@ -127,7 +127,7 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-2xl font-bold text-white group-hover:text-amber-300 transition-colors mb-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors mb-1 tracking-tight">
                   {project.title}
                 </h3>
                 <p className="text-xs font-mono text-amber-400/90 mb-4 font-semibold">
@@ -135,14 +135,14 @@ export const ProjectsSection: React.FC = () => {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                <p className="text-slate-300 text-sm leading-relaxed mb-5 font-normal">
                   {project.description}
                 </p>
 
                 {/* Features List */}
-                <div className="space-y-2 mb-6">
+                <div className="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 space-y-2 mb-6">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
-                    Key Features Architecture:
+                    Key Features & Architecture:
                   </span>
                   {project.features.map((feat, fIdx) => (
                     <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-300">
@@ -159,7 +159,7 @@ export const ProjectsSection: React.FC = () => {
                   {project.techStack.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-slate-800 text-slate-200 border border-slate-700"
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-950 text-slate-300 border border-slate-800"
                     >
                       {tech}
                     </span>
@@ -182,7 +182,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="py-2.5 px-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-500/50 transition-all flex items-center gap-1.5 font-mono text-xs"
+                      className="py-2.5 px-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition-all flex items-center gap-1.5 font-mono text-xs"
                       title="View Source Code on GitHub"
                     >
                       <Github className="w-3.5 h-3.5" />
@@ -191,7 +191,7 @@ export const ProjectsSection: React.FC = () => {
                   )}
                   <button
                     onClick={() => setActiveModalProject(project)}
-                    className="p-2.5 rounded-xl bg-slate-950 border border-slate-700 text-slate-300 hover:text-white hover:border-slate-600 shrink-0"
+                    className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 shrink-0"
                     title="View Full Architecture Details"
                   >
                     <Info className="w-4 h-4" />

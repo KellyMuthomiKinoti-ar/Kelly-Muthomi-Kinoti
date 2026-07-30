@@ -68,22 +68,22 @@ export const ResearchPublications: React.FC = () => {
           {RESEARCH_PAPERS.map((paper) => (
             <div
               key={paper.id}
-              className="bg-slate-950 border border-slate-800 hover:border-blue-500/40 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between transition-all duration-300 shadow-xl"
+              className="bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between transition-all duration-300 shadow-lg backdrop-blur-md"
             >
               <div className="space-y-4">
                 
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 font-bold">
+                  <span className="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold whitespace-nowrap">
                     {paper.field}
                   </span>
                   <span className="text-slate-400 font-bold">Published: {paper.year}</span>
                 </div>
 
-                <h3 className="text-xl font-extrabold text-white leading-snug">
+                <h3 className="text-xl font-bold text-white leading-snug tracking-tight">
                   {paper.title}
                 </h3>
 
-                <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
                   <strong className="text-amber-400 font-mono text-[11px] uppercase block mb-1">Abstract:</strong>
                   {paper.abstract}
                 </p>
