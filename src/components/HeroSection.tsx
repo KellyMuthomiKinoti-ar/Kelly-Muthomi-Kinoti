@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  MapPin, Phone, Mail, Linkedin, Facebook, Twitter, Globe, Download, Award, Send, Code, 
+  MapPin, Phone, Mail, Linkedin, Facebook, Twitter, Instagram, Globe, Download, Award, Send, Code, 
   Check, Copy, ShieldCheck, Sparkles, ExternalLink, ArrowRight, Laptop, CheckCircle, X, ZoomIn
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -203,6 +203,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume, onOpenCe
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.89-2.89c.21 0 .42.02.62.07V9.32a6.34 6.34 0 1 0 5.72 6.31V8.58a8.2 8.2 0 0 0 4.77 1.53V6.69z" />
                   </svg>
                   <span>TikTok</span>
+                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href={PERSONAL_INFO.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 bg-slate-900/90 border border-slate-700 px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+                >
+                  <Instagram className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Instagram</span>
                   <ExternalLink className="w-3 h-3 text-slate-500" />
                 </a>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  ArrowUp, ShieldCheck, Mail, Phone, MapPin, Linkedin, Facebook, Twitter, ExternalLink, 
+  ArrowUp, ShieldCheck, Mail, Phone, MapPin, Linkedin, Facebook, Twitter, Instagram, ExternalLink, 
   FileText, Award, Code, GraduationCap, BarChart3, Briefcase, BookOpen, 
   Sparkles, CheckCircle2, MessageSquare
 } from 'lucide-react';
@@ -36,8 +36,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
           {/* Column 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-extrabold text-lg shadow-lg shadow-amber-500/20">
-                {PERSONAL_INFO.initials}
+              <div className="w-11 h-11 rounded-2xl bg-slate-900 overflow-hidden border border-amber-500/40 flex items-center justify-center shadow-lg shadow-amber-500/20 shrink-0">
+                <img src="/kmk-logo.jpg" alt="KMK Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div>
                 <span className="text-white font-bold text-base block tracking-tight">KELLY MUTHOMI KINOTI</span>
@@ -335,6 +335,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
                   </svg>
                 </div>
                 <span>TikTok Profile</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
+                title="Instagram Profile"
+              >
+                <div className="p-1 rounded bg-slate-900 border border-slate-800 text-amber-400 group-hover:border-amber-500/50">
+                  <Instagram className="w-3.5 h-3.5" />
+                </div>
+                <span>Instagram Profile</span>
               </a>
             </div>
           </div>

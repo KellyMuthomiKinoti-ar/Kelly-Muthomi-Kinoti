@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Send, Phone, Mail, MapPin, Linkedin, Facebook, Twitter, Globe, Copy, Check, 
+  Send, Phone, Mail, MapPin, Linkedin, Facebook, Twitter, Instagram, Globe, Copy, Check, 
   ExternalLink, Sparkles, MessageSquare, CheckCircle2, AlertCircle
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -192,6 +192,25 @@ export const ContactSection: React.FC = () => {
                   <div>
                     <span className="text-[11px] font-mono text-slate-400 uppercase block font-semibold">Social Media</span>
                     <span className="text-white font-bold text-sm group-hover:text-amber-300">TikTok Profile</span>
+                  </div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-amber-400" />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href={PERSONAL_INFO.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="p-5 rounded-2xl bg-slate-900/70 border border-slate-700/60 hover:border-amber-500/50 transition-all flex items-center justify-between group shadow-lg backdrop-blur-md"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-700 text-amber-400 flex items-center justify-center shrink-0">
+                    <Instagram className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono text-slate-400 uppercase block font-semibold">Social Media</span>
+                    <span className="text-white font-bold text-sm group-hover:text-amber-300">Instagram Profile</span>
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-amber-400" />

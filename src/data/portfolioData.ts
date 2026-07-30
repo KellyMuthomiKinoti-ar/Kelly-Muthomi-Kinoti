@@ -15,6 +15,7 @@ export const PERSONAL_INFO = {
   facebook: 'https://www.facebook.com/kelly.mnaa/',
   twitter: 'https://x.com/kellymnaaa',
   tiktok: 'https://www.tiktok.com/@kellymuthomikinoti',
+  instagram: 'https://www.instagram.com/kellymuthomikinoti/',
   github: 'https://github.com/kellymuthomi',
   summary: 'Full-stack web developer and TSC-registered STEM educator specializing in EdTech software engineering, PHP/React web applications, relational database design, and statistical data analytics. Holds a B.A. in Education (Business Studies & Mathematics) from Moi University with 6+ years combining software engineering, ICT leadership, and empirical research.',
   livePortfolios: [
