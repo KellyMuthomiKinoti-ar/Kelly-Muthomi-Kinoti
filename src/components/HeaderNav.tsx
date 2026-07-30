@@ -167,7 +167,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
           >
             <div className="relative">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-900 overflow-hidden flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform border border-amber-500/40 shrink-0">
-                <img src="/kmk-logo.jpg" alt="KMK Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="/kmk-logo.png" alt="KMK Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-emerald-500 rounded-full border-2 border-slate-950 animate-pulse" title="Available for Engagements" />
             </div>

@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-2xl bg-slate-900 overflow-hidden border border-amber-500/40 flex items-center justify-center shadow-lg shadow-amber-500/20 shrink-0">
-                <img src="/kmk-logo.jpg" alt="KMK Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="/kmk-logo.png" alt="KMK Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div>
                 <span className="text-white font-bold text-base block tracking-tight">KELLY MUTHOMI KINOTI</span>

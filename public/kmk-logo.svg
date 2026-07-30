@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <rect width="600" height="400" fill="#FFFFFF"/>
+  <g transform="translate(44, 10)">
+    <!-- Gold Chevron Background Accent -->
+    <path d="M 256 70 L 366 185 L 256 300 L 146 185 Z" fill="none" stroke="#D97706" stroke-width="12" opacity="0.4" stroke-linejoin="round"/>
+    <path d="M 256 100 L 340 185 L 256 270 L 172 185 Z" fill="none" stroke="#CA8A04" stroke-width="7" opacity="0.3" stroke-linejoin="round"/>
+    
+    <!-- KMK Monogram -->
+    <g fill="none" stroke="#064E3B" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left K -->
+      <line x1="150" y1="110" x2="150" y2="260" />
+      <polyline points="225,110 150,185 225,260" />
+      
+      <!-- Right K -->
+      <line x1="362" y1="110" x2="362" y2="260" />
+      <polyline points="287,110 362,185 287,260" />
+
+      <!-- Center M shape -->
+      <polyline points="150,185 256,260 362,185" stroke="#047857" stroke-width="24" />
+    </g>
+
+    <!-- Subtitle Text -->
+    <text x="256" y="325" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="22" font-weight="700" fill="#0F172A" letter-spacing="4" text-anchor="middle">KELLY MUTHOMI KINOTI</text>
+  </g>
+</svg>
