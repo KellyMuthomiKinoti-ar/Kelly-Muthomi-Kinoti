@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  ArrowUp, ShieldCheck, Mail, Phone, MapPin, Linkedin, ExternalLink, 
+  ArrowUp, ShieldCheck, Mail, Phone, MapPin, Linkedin, Facebook, Twitter, ExternalLink, 
   FileText, Award, Code, GraduationCap, BarChart3, Briefcase, BookOpen, 
   Sparkles, CheckCircle2, MessageSquare
 } from 'lucide-react';
@@ -294,6 +294,47 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
                   <Linkedin className="w-3.5 h-3.5" />
                 </div>
                 <span>LinkedIn Profile</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
+                title="Facebook Profile"
+              >
+                <div className="p-1 rounded bg-slate-900 border border-slate-800 text-amber-400 group-hover:border-amber-500/50">
+                  <Facebook className="w-3.5 h-3.5" />
+                </div>
+                <span>Facebook Profile</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.twitter}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
+                title="X (Twitter) Profile"
+              >
+                <div className="p-1 rounded bg-slate-900 border border-slate-800 text-amber-400 group-hover:border-amber-500/50">
+                  <Twitter className="w-3.5 h-3.5" />
+                </div>
+                <span>X (Twitter) Profile</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.tiktok}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
+                title="TikTok Profile"
+              >
+                <div className="p-1 rounded bg-slate-900 border border-slate-800 text-amber-400 group-hover:border-amber-500/50">
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.89-2.89c.21 0 .42.02.62.07V9.32a6.34 6.34 0 1 0 5.72 6.31V8.58a8.2 8.2 0 0 0 4.77 1.53V6.69z" />
+                  </svg>
+                </div>
+                <span>TikTok Profile</span>
               </a>
             </div>
           </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kelly-muthomi-kinoti.vercel.app/sitemap.xml

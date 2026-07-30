@@ -11,7 +11,10 @@ export const PERSONAL_INFO = {
   phone: '+254 708 220 323',
   phoneClean: '+254708220323',
   email: 'kellymuthomi22@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/kelly-muthomi-104760155/',
+  linkedin: 'https://www.linkedin.com/in/kelly-muthomi/',
+  facebook: 'https://www.facebook.com/kelly.mnaa/',
+  twitter: 'https://x.com/kellymnaaa',
+  tiktok: 'https://www.tiktok.com/@kellymuthomikinoti',
   github: 'https://github.com/kellymuthomi',
   summary: 'Full-stack web developer and TSC-registered STEM educator specializing in EdTech software engineering, PHP/React web applications, relational database design, and statistical data analytics. Holds a B.A. in Education (Business Studies & Mathematics) from Moi University with 6+ years combining software engineering, ICT leadership, and empirical research.',
   livePortfolios: [
