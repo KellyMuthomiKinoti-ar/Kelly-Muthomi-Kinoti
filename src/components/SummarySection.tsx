@@ -16,8 +16,8 @@ export const SummarySection: React.FC = () => {
     {
       icon: ShieldCheck,
       title: 'Licensed TSC Educator',
-      detail: 'Fully registered with Teachers Service Commission (TSC No. 1030686) for Mathematics, Business Studies, and Computer Studies instruction.',
-      tag: 'TSC License #1030686'
+      detail: 'Fully registered with the Teachers Service Commission (TSC) for Mathematics, Business Studies, and Computer Studies instruction.',
+      tag: 'TSC Registered Teacher'
     },
     {
       icon: Award,
@@ -97,6 +97,15 @@ export const SummarySection: React.FC = () => {
                 </span>
                 <span className="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-slate-200 text-xs font-medium">
                   KEMIS Data Administration
+                </span>
+                <span className="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-emerald-400 text-xs font-medium">
+                  Lovable AI-Assisted Dev
+                </span>
+                <span className="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-amber-200 text-xs font-medium">
+                  APA / MLA / Harvard / IEEE / Chicago
+                </span>
+                <span className="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-amber-400 text-xs font-medium">
+                  Project Management & Leadership
                 </span>
               </div>
             </div>

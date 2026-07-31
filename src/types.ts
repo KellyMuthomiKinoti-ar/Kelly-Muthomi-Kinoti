@@ -13,6 +13,20 @@ export interface Project {
   description: string;
   metrics?: string;
   badge?: string;
+  architecture?: {
+    frontend: string;
+    backend: string;
+    database: string;
+    devops: string;
+  };
+  challengesSolved?: {
+    title: string;
+    solution: string;
+  }[];
+  keyMetrics?: {
+    label: string;
+    value: string;
+  }[];
 }
 
 export interface Experience {

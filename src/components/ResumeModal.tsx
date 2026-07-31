@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   X, Printer, Copy, Check, Download, FileText, Mail, Phone, 
-  MapPin, ShieldCheck, Award, GraduationCap, Briefcase, Code, Sparkles 
+  MapPin, ShieldCheck, Award, GraduationCap, Briefcase, Code, Sparkles, ExternalLink 
 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION_LIST, CERTIFICATIONS, SKILL_CATEGORIES } from '../data/portfolioData';
 
@@ -89,10 +89,21 @@ FEATURED LIVE WEBSITES & PORTFOLIOS
             <span>Official Curriculum Vitae</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            <a
+              href="https://drive.google.com/file/d/1kCAmCDUSp-V-4Mz3j2TdfBr6rawftcf0/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="px-3.5 py-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/40 hover:bg-emerald-500/25 text-xs text-emerald-300 flex items-center gap-1.5 font-bold transition-colors"
+              title="View & Download Official PDF CV from Google Drive"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Original PDF CV</span>
+            </a>
+
             <button
               onClick={handleCopyCV}
-              className="px-3.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700 hover:border-slate-600 text-xs text-slate-300 flex items-center gap-1.5 font-medium"
+              className="px-3.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700 hover:border-slate-600 text-xs text-slate-300 flex items-center gap-1.5 font-medium transition-colors"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-amber-400" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'CV Copied' : 'Copy Text CV'}</span>
@@ -100,7 +111,7 @@ FEATURED LIVE WEBSITES & PORTFOLIOS
 
             <button
               onClick={handlePrint}
-              className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 text-xs text-amber-300 flex items-center gap-1.5 font-bold"
+              className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 text-xs text-amber-300 flex items-center gap-1.5 font-bold transition-colors"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Save PDF</span>

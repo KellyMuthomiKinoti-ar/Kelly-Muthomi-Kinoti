@@ -86,6 +86,18 @@ export default function App() {
     }
   }, [currentUser]);
 
+  // Global Keydown Listener for Quick Command Palette (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsCommandPaletteOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
   const handleOpenCertModal = (cert?: Certification) => {
     setSelectedCert(cert || null);
     setIsCertModalOpen(true);
