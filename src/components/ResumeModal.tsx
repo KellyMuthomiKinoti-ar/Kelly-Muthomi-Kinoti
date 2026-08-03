@@ -65,6 +65,7 @@ FEATURED LIVE WEBSITES & PORTFOLIOS
 - StyledKid E-Commerce: https://styledkid.co.ke
 - WildLens Adventure: https://wildlensadventure.com
 - Menwe Junior School: https://menwe-school.vercel.app/
+- K-News 254 Digital Media: https://knews-254.vercel.app/
 `;
   };
 

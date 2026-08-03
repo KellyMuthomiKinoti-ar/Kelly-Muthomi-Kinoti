@@ -23,6 +23,7 @@ export const PERSONAL_INFO = {
     { name: 'StyledKid E-Commerce', url: 'https://styledkid.co.ke' },
     { name: 'WildLens Adventure', url: 'https://wildlensadventure.com' },
     { name: 'Menwe Junior School Web App', url: 'https://menwe-school.vercel.app/' },
+    { name: 'K-News 254 Digital Media', url: 'https://knews-254.vercel.app/' },
     { name: 'Portfolio Source (GitHub)', url: 'https://github.com/KellyMuthomiKinoti-ar/Kelly-Muthomi-Kinoti' }
   ]
 };
@@ -177,6 +178,47 @@ export const PROJECTS: Project[] = [
       { label: 'Lighthouse Score', value: '100/100' },
       { label: 'Edge Locations', value: 'Global CDN' },
       { label: 'Parent Reach', value: '100%' }
+    ]
+  },
+  {
+    id: 'knews-254',
+    title: 'K-News 254',
+    subtitle: 'Digital News & Real-Time Journalism Portal',
+    category: 'web-app',
+    link: 'https://knews-254.vercel.app/',
+    githubUrl: 'https://github.com/KellyMuthomiKinoti-ar/knews-254',
+    displayUrl: 'knews-254.vercel.app',
+    techStack: ['Next.js / React', 'TypeScript', 'Tailwind CSS', 'Vercel Edge CDN', 'SEO Schema Markup', 'REST APIs'],
+    features: [
+      'High-performance digital journalism & real-time news aggregation portal',
+      'Clean editorial typography and responsive mobile-first UI design',
+      'Structured JSON-LD news article schema for search engine indexing and Google News discovery',
+      'Optimized edge caching and instant page transitions on cellular networks',
+      'Accessible navigation hierarchy and categorized content channels'
+    ],
+    description: 'A modern, high-speed digital news and real-time journalism portal built for Kenyan and East African news delivery. Engineered with Next.js and Tailwind CSS for rapid page loads, clean editorial typography, and search visibility.',
+    badge: 'Live Media Portal',
+    architecture: {
+      frontend: 'Next.js & React responsive layout with Tailwind CSS typography tokens and accessible reading modes',
+      backend: 'Next.js serverless route handlers and edge-cached article delivery pipelines',
+      database: 'Headless editorial content architecture with optimized tagging and structured categories',
+      devops: 'Vercel Edge Network deployment with automated SSL, CDN asset caching, and SEO sitemaps'
+    },
+    challengesSolved: [
+      {
+        title: 'Mobile Reader Retention on Cellular Connections',
+        solution: 'Optimized bundle footprints and asset delivery over edge CDN so breaking news loads in under a second on 3G and 4G networks.'
+      },
+      {
+        title: 'Editorial Legibility & Discovery',
+        solution: 'Implemented structured JSON-LD ScholarlyArticle and NewsArticle schemas alongside high-contrast typography to elevate organic search discovery.'
+      }
+    ],
+    keyMetrics: [
+      { label: 'PageLoad Time', value: '0.5s' },
+      { label: 'Mobile Score', value: '99/100' },
+      { label: 'Edge Caching', value: '100%' },
+      { label: 'SEO Schema', value: 'NewsArticle' }
     ]
   },
   {

@@ -66,6 +66,22 @@ const CASE_STUDIES: Record<string, CaseStudyDetails> = {
       { tech: 'Web Architecture', reason: 'Accessible WCAG AA compliant navigation hierarchy' }
     ]
   },
+  'knews-254': {
+    problemExisted: 'Kenyan and East African readers often encounter slow, ad-cluttered news websites with poor mobile typography and sluggish loading on cellular connections.',
+    whyImportant: 'Rapid, reliable access to verified breaking news and civic journalism is essential; mobile readers abandon pages that take more than a few seconds to load.',
+    solutionEngineered: 'Architected a lightning-fast digital media portal deployed on Vercel global edge network, featuring streamlined content caching, responsive editorial layouts, and SEO schema markup.',
+    lessonsLearned: [
+      'Edge caching and image optimization are vital for retaining mobile news readers.',
+      'Clean editorial typography enhances reading endurance and time-on-site.',
+      'Structured news article JSON-LD schema significantly boosts discovery on Google News and search engines.'
+    ],
+    techRationale: [
+      { tech: 'Next.js / React', reason: 'High-speed server rendering and instant route navigation' },
+      { tech: 'Tailwind CSS', reason: 'Clean editorial typography and responsive mobile layout' },
+      { tech: 'Vercel Edge CDN', reason: 'Global CDN distribution for zero-latency article loading' },
+      { tech: 'SEO Schema Markup', reason: 'Structured JSON-LD news indexing for search visibility' }
+    ]
+  },
   'portfolio-system': {
     problemExisted: 'Conventional developer portfolios lack verifiable empirical research models, pedagogical proof, and dynamic print-ready professional CV generation.',
     whyImportant: 'Technical evaluators and academic recruiters require immediate, verifiable evidence across full-stack engineering, classroom instruction, and statistical analysis.',

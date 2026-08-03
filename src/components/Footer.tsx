@@ -177,6 +177,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
               </li>
               <li>
                 <a
+                  href="https://knews-254.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-amber-400 transition-colors flex items-center justify-between text-slate-300 group"
+                >
+                  <span className="group-hover:translate-x-0.5 transition-transform">K-News 254 Portal</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400/80 opacity-70 group-hover:opacity-100" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="#projects"
                   className="hover:text-amber-400 transition-colors flex items-center justify-between text-slate-300"
                 >
