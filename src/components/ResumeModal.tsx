@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   X, Printer, Copy, Check, Download, FileText, Mail, Phone, 
-  MapPin, ShieldCheck, Award, GraduationCap, Briefcase, Code, Sparkles, ExternalLink 
+  MapPin, ShieldCheck, Award, GraduationCap, Briefcase, Code, Sparkles, ExternalLink, Github 
 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION_LIST, CERTIFICATIONS, SKILL_CATEGORIES } from '../data/portfolioData';
 
@@ -25,6 +25,7 @@ Location: ${PERSONAL_INFO.location}
 Phone: ${PERSONAL_INFO.phone}
 Email: ${PERSONAL_INFO.email}
 LinkedIn: ${PERSONAL_INFO.linkedin}
+GitHub: ${PERSONAL_INFO.github}
 TSC Status: Active & Licensed Educator
 
 EXECUTIVE SUMMARY
@@ -148,6 +149,11 @@ FEATURED LIVE WEBSITES & PORTFOLIOS
               <span className="flex items-center gap-1">
                 <Mail className="w-3.5 h-3.5 text-amber-400" />
                 {PERSONAL_INFO.email}
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1">
+                <Github className="w-3.5 h-3.5 text-amber-400" />
+                github.com/KellyMuthomiKinoti-ar
               </span>
               <span>•</span>
               <span className="text-amber-400 font-bold">TSC Registered Educator (Licensed)</span>

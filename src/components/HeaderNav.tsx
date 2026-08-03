@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Send, Award, Briefcase, Code, GraduationCap, BarChart3, UserCheck, Search, Sparkles, Phone, Mail, BookOpen } from 'lucide-react';
+import { Menu, X, FileText, Send, Award, Briefcase, Code, GraduationCap, BarChart3, UserCheck, Search, Sparkles, Phone, Mail, BookOpen, Github } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 // Custom WhatsApp SVG Icon
@@ -264,6 +264,17 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
               aria-label="Send Direct Email"
             >
               <Mail className="w-4 h-4" />
+            </a>
+
+            <a
+              href={PERSONAL_INFO.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 text-slate-300 hover:text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
+              title="View GitHub Profile"
+              aria-label="View GitHub Profile"
+            >
+              <Github className="w-4 h-4" />
             </a>
 
             <button

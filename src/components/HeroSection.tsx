@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   MapPin, Phone, Mail, Linkedin, Facebook, Twitter, Instagram, Globe, Download, Award, Send, Code, 
-  Check, Copy, ShieldCheck, Sparkles, ExternalLink, ArrowRight, Laptop, CheckCircle, X, ZoomIn
+  Check, Copy, ShieldCheck, Sparkles, ExternalLink, ArrowRight, Laptop, CheckCircle, X, ZoomIn, Github
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -118,6 +118,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume, onOpenCe
                 <Award className="w-4 h-4 text-amber-400" />
                 <span>View Certifications</span>
               </button>
+
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700 hover:border-amber-500/50 shadow-md transition-all flex items-center gap-2"
+                id="hero-github-btn"
+              >
+                <Github className="w-4 h-4 text-amber-400" />
+                <span>GitHub Profile</span>
+              </a>
             </div>
 
             {/* Direct Contact Details Quick Bar */}
@@ -155,6 +166,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume, onOpenCe
                     {copiedField === 'email' ? <Check className="w-3.5 h-3.5 text-amber-400" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
                 </div>
+
+                {/* GitHub */}
+                <a
+                  href={PERSONAL_INFO.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 bg-slate-900/90 border border-slate-700 px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+                >
+                  <Github className="w-3.5 h-3.5 text-amber-400" />
+                  <span>GitHub</span>
+                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                </a>
 
                 {/* LinkedIn */}
                 <a

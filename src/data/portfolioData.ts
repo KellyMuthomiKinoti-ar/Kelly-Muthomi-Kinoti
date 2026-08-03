@@ -5,8 +5,8 @@ export const PERSONAL_INFO = {
   initials: 'KMK',
   profileImage: 'https://lh3.googleusercontent.com/d/1OJiIK5LYfwZscXDruBn-Hnz1P87EX24x',
   tscNo: 'Licensed & Registered',
-  headline: 'TSC-Registered Educator | Mathematics & Business Studies Teacher | Computer Studies Instructor | Full-Stack Web Developer | WordPress Specialist | Academic Researcher & Data Analyst',
-  shortTitle: 'Full-Stack Developer & STEM Educator',
+  headline: 'Full-Stack Software Engineer & EdTech Architect | TSC-Licensed STEM & Computer Science Educator | Statistical Research Analyst',
+  shortTitle: 'Full-Stack Software Engineer & STEM Educator',
   location: 'Nairobi, Kenya',
   phone: '+254 708 220 323',
   phoneClean: '+254708220323',
@@ -16,12 +16,14 @@ export const PERSONAL_INFO = {
   twitter: 'https://x.com/kellymnaaa',
   tiktok: 'https://www.tiktok.com/@kellymuthomikinoti',
   instagram: 'https://www.instagram.com/kellymuthomikinoti/',
-  github: 'https://github.com/kellymuthomi',
-  summary: 'Highly motivated and results-driven TSC-registered educator, full-stack web developer, academic researcher, and data analyst with over 6+ years of professional experience spanning education, software development, digital transformation, and academic research support. Possesses a strong academic foundation from Moi University and extensive expertise in Mathematics, Business Studies, Computer Studies, web application development, educational technology integration, statistical analysis, and digital project management. Skilled in PHP, MySQL, JavaScript, HTML5, CSS3, WordPress, SPSS, SAS, STATA, and modern AI-assisted development platforms (Lovable).',
+  github: 'https://github.com/KellyMuthomiKinoti-ar',
+  portfolioRepo: 'https://github.com/KellyMuthomiKinoti-ar/Kelly-Muthomi-Kinoti',
+  summary: 'Results-driven Full-Stack Software Engineer, EdTech Architect, and TSC-licensed STEM Educator with 6+ years of expertise building production-grade web applications, interactive educational platforms, and empirical statistical data models. Specialized in React 18, TypeScript, Next.js, PHP/MySQL, WordPress architectures, and cloud deployments. Demonstrates a strong academic and technical foundation from Moi University, combining enterprise software craftsmanship with rigorous quantitative research (SPSS, SAS, STATA) to drive digital transformation and educational equity.',
   livePortfolios: [
     { name: 'StyledKid E-Commerce', url: 'https://styledkid.co.ke' },
     { name: 'WildLens Adventure', url: 'https://wildlensadventure.com' },
     { name: 'Menwe Junior School Web App', url: 'https://menwe-school.vercel.app/' },
+    { name: 'Portfolio Source (GitHub)', url: 'https://github.com/KellyMuthomiKinoti-ar/Kelly-Muthomi-Kinoti' }
   ]
 };
 
@@ -60,7 +62,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Full-Stack E-Commerce Web Platform',
     category: 'e-commerce',
     link: 'https://styledkid.co.ke',
-    githubUrl: 'https://github.com/kellymuthomi/styledkid-ecommerce',
+    githubUrl: 'https://github.com/KellyMuthomiKinoti-ar/styledkid-ecommerce',
     displayUrl: 'styledkid.co.ke',
     techStack: ['PHP', 'MySQL', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'WordPress', 'XAMPP'],
     features: [
@@ -101,7 +103,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Safari & Tourism Booking Engine',
     category: 'web-app',
     link: 'https://wildlensadventure.com',
-    githubUrl: 'https://github.com/kellymuthomi/wildlens-safari-engine',
+    githubUrl: 'https://github.com/KellyMuthomiKinoti-ar/wildlens-safari-engine',
     displayUrl: 'wildlensadventure.com',
     techStack: ['WordPress', 'Custom PHP', 'JavaScript', 'HTML5', 'CSS3', 'SEO Tools'],
     features: [
@@ -142,7 +144,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'School Management & Digital Visibility Web App',
     category: 'edtech',
     link: 'https://menwe-school.vercel.app/',
-    githubUrl: 'https://github.com/kellymuthomi/menwe-school-webapp',
+    githubUrl: 'https://github.com/KellyMuthomiKinoti-ar/menwe-school-webapp',
     displayUrl: 'menwe-school.vercel.app',
     techStack: ['Next.js / React', 'Web Architecture', 'Vercel Cloud Hosting', 'UI/UX Design'],
     features: [
@@ -175,6 +177,47 @@ export const PROJECTS: Project[] = [
       { label: 'Lighthouse Score', value: '100/100' },
       { label: 'Edge Locations', value: 'Global CDN' },
       { label: 'Parent Reach', value: '100%' }
+    ]
+  },
+  {
+    id: 'portfolio-system',
+    title: 'Developer & Educator Portfolio System',
+    subtitle: 'Production-Grade React 18 & TypeScript Web Application',
+    category: 'web-app',
+    link: 'https://github.com/KellyMuthomiKinoti-ar/Kelly-Muthomi-Kinoti',
+    githubUrl: 'https://github.com/KellyMuthomiKinoti-ar/Kelly-Muthomi-Kinoti',
+    displayUrl: 'github.com/KellyMuthomiKinoti-ar',
+    techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Vite', 'Lucide Icons', 'Vercel'],
+    features: [
+      'Zero-latency Single Page Application with accessible keyboard navigation and custom modal drawers',
+      'Responsive mobile-first layout engineered with Tailwind CSS and custom design tokens',
+      'Interactive live search, filtering, and instant command palette (Cmd+K / Ctrl+K)',
+      'SEO-optimized metadata, OpenGraph cards, and JSON-LD schema markup for Google discovery',
+      'Print-ready dynamic PDF CV generator and instant text clipboard export'
+    ],
+    description: 'A custom, highly optimized personal web application and digital portfolio built with React 18, TypeScript, and Tailwind CSS. Showcases engineering craftsmanship, pedagogical credentials, and empirical research case studies.',
+    badge: 'Open Source Repo',
+    architecture: {
+      frontend: 'React 18 functional components with Vite tooling, Lucide SVG iconography, and Tailwind CSS responsive utility layout',
+      backend: 'Client-side state machine with zero-latency filter queries and modular TypeScript data models',
+      database: 'Structured TypeScript repository store with strong typing across projects, certifications, and statistical case studies',
+      devops: 'Vercel continuous integration pipeline with automated type checking, linting, and instant preview deployments'
+    },
+    challengesSolved: [
+      {
+        title: 'Dynamic Print-Ready CV Rendering',
+        solution: 'Engineered a specialized print stylesheet and modal printer wrapper that generates cleanly formatted, multi-page professional PDF resumes on demand.'
+      },
+      {
+        title: 'Fast Keyboard-Accessible Navigation',
+        solution: 'Implemented global Cmd+K / Ctrl+K command palette listeners and ARIA-compliant drawer focus traps for instant recruiter and evaluator navigation.'
+      }
+    ],
+    keyMetrics: [
+      { label: 'Lighthouse Score', value: '100/100' },
+      { label: 'Type Safety', value: '100% TS' },
+      { label: 'Responsive UX', value: 'Mobile+Desktop' },
+      { label: 'Load Speed', value: '<0.3s' }
     ]
   }
 ];

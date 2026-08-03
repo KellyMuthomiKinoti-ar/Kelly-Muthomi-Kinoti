@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   ArrowUp, ShieldCheck, Mail, Phone, MapPin, Linkedin, Facebook, Twitter, Instagram, ExternalLink, 
   FileText, Award, Code, GraduationCap, BarChart3, Briefcase, BookOpen, 
-  Sparkles, CheckCircle2, MessageSquare
+  Sparkles, CheckCircle2, MessageSquare, Github
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -281,6 +281,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
                   <Mail className="w-3.5 h-3.5" />
                 </div>
                 <span className="truncate">{PERSONAL_INFO.email}</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
+                title="GitHub Profile"
+              >
+                <div className="p-1 rounded bg-slate-900 border border-slate-800 text-amber-400 group-hover:border-amber-500/50">
+                  <Github className="w-3.5 h-3.5" />
+                </div>
+                <span>GitHub Profile</span>
               </a>
 
               <a
