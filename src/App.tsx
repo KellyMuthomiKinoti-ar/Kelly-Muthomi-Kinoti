@@ -28,7 +28,6 @@ import { GlobalCommandPalette } from './components/GlobalCommandPalette';
 
 import { BlogSection } from './components/BlogSection';
 import { AuthModal } from './components/AuthModal';
-import { BlogWriterModal } from './components/BlogWriterModal';
 import { BlogReaderModal } from './components/BlogReaderModal';
 import { UserRatingModal } from './components/UserRatingModal';
 
@@ -47,7 +46,7 @@ export default function App() {
     return saved ? JSON.parse(saved) : null;
   });
 
-  // Blog Engine State
+  // Blog Engine State - Read from curated static dataset
   const [posts, setPosts] = useState<BlogPost[]>(() => {
     const saved = localStorage.getItem('kelly_blog_posts');
     return saved ? JSON.parse(saved) : INITIAL_BLOG_POSTS;
@@ -61,8 +60,6 @@ export default function App() {
 
   // Modals state
   const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [isWriterOpen, setIsWriterOpen] = useState(false);
-  const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   
   const [isReaderOpen, setIsReaderOpen] = useState(false);
   const [readingPost, setReadingPost] = useState<BlogPost | null>(null);
@@ -104,22 +101,6 @@ export default function App() {
   };
 
   // Blog Handler Actions
-  const handleSaveBlogPost = (post: BlogPost) => {
-    setPosts(prev => {
-      const exists = prev.some(p => p.id === post.id);
-      if (exists) {
-        return prev.map(p => (p.id === post.id ? post : p));
-      }
-      return [post, ...prev];
-    });
-  };
-
-  const handleDeletePost = (postId: string) => {
-    if (window.confirm('Are you sure you want to delete this blog article?')) {
-      setPosts(prev => prev.filter(p => p.id !== postId));
-    }
-  };
-
   const handleLikePost = (postId: string) => {
     setPosts(prev =>
       prev.map(p => {
@@ -204,22 +185,17 @@ export default function App() {
         {/* Full-Stack Web Projects Showcase */}
         <ProjectsSection />
 
-        {/* INTERACTIVE BLOG ENGINE & USER RATINGS BOARD */}
+        {/* KNOWLEDGE HUB & TECHNICAL ARTICLES */}
         <BlogSection
           posts={posts}
           ratings={ratings}
           currentUser={currentUser}
           onOpenAuth={() => setIsAuthOpen(true)}
-          onOpenWriter={(postToEdit) => {
-            setEditingPost(postToEdit || null);
-            setIsWriterOpen(true);
-          }}
           onOpenReader={(post) => {
             setReadingPost(post);
             setIsReaderOpen(true);
           }}
           onOpenRateModal={() => setIsRateOpen(true)}
-          onDeletePost={handleDeletePost}
         />
 
         {/* Interactive CBC Lesson Plan & STEM Problem Generator */}
@@ -307,18 +283,6 @@ export default function App() {
         onLoginSuccess={(user) => setCurrentUser(user)}
       />
 
-      {/* Blog Article Writer & Manager Modal */}
-      <BlogWriterModal
-        isOpen={isWriterOpen}
-        onClose={() => {
-          setIsWriterOpen(false);
-          setEditingPost(null);
-        }}
-        currentUser={currentUser}
-        onSaveBlogPost={handleSaveBlogPost}
-        editingPost={editingPost}
-      />
-
       {/* Blog Article Reader & Downloader Modal */}
       <BlogReaderModal
         post={readingPost}
@@ -331,6 +295,7 @@ export default function App() {
         onLikePost={handleLikePost}
         onRatePost={handleRatePost}
         onAddComment={handleAddComment}
+        onSelectPost={(post) => setReadingPost(post)}
       />
 
       {/* User "Rate Me" Rating Submission Modal */}

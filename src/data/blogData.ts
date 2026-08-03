@@ -38,6 +38,14 @@ $$ \\text{Profit} = (\\text{Selling Price} \\times x) - (\\text{Cost Price} \\ti
     ratingCount: 12,
     ratingSum: 60, // 5.0 avg
     isFeatured: true,
+    status: 'published',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80',
+    seoMetadata: {
+      title: 'Integrating Interactive STEM Calculators in CBC Grade 8 Linear Equations | Knowledge Hub',
+      description: 'How practical digital tools bridge abstract algebraic concepts with real-world Kenyan market pricing and student engagement.',
+      keywords: ['CBC Pedagogy', 'Grade 8 Math', 'STEM Education', 'Digital Tools']
+    },
+    relatedSlugs: ['architecting-ecommerce-systems-automated-mpesa-stk-push', 'spss-quantitative-data-research-multiple-regression-modeling'],
     comments: [
       {
         id: 'c1',
@@ -105,6 +113,14 @@ Standard manual payment verification (where customers type transaction codes) su
     ratingCount: 16,
     ratingSum: 80, // 5.0 avg
     isFeatured: true,
+    status: 'published',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80',
+    seoMetadata: {
+      title: 'Architecting High-Performance E-Commerce Systems with Automated M-Pesa STK Push | Knowledge Hub',
+      description: 'A technical deep-dive into PHP/MySQL database design, web security, and M-Pesa Daraja API integration for StyledKid.co.ke.',
+      keywords: ['PHP', 'MySQL', 'M-Pesa API', 'E-Commerce', 'Web Security']
+    },
+    relatedSlugs: ['integrating-interactive-stem-calculators-cbc-grade-8', 'spss-quantitative-data-research-multiple-regression-modeling'],
     comments: [
       {
         id: 'c3',
@@ -155,6 +171,14 @@ $$ Y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\epsilon $$
     ratingCount: 8,
     ratingSum: 40,
     isFeatured: false,
+    status: 'published',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80',
+    seoMetadata: {
+      title: 'SPSS Quantitative Data Research & Multiple Regression Modeling in Education | Knowledge Hub',
+      description: 'Step-by-step statistical guidelines for analyzing ICT intervention metrics in secondary school academic performance.',
+      keywords: ['SPSS', 'Quantitative Analysis', 'Regression Modeling', 'Education Research']
+    },
+    relatedSlugs: ['integrating-interactive-stem-calculators-cbc-grade-8', 'architecting-ecommerce-systems-automated-mpesa-stk-push'],
     comments: []
   }
 ];

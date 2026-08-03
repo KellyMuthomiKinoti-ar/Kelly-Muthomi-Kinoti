@@ -103,6 +103,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
                 </a>
               </li>
               <li>
+                <a href="#blog" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                  <BookOpen className="w-3 h-3 text-amber-500/60" />
+                  <span>Knowledge Hub</span>
+                </a>
+              </li>
+              <li>
                 <a href="#experience" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
                   <Briefcase className="w-3 h-3 text-amber-500/60" />
                   <span>Work Experience</span>

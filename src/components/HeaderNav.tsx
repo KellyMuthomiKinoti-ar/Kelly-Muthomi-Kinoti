@@ -53,7 +53,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
   const navLinks = [
     { name: 'About', href: '#about', icon: UserCheck },
     { name: 'Projects', href: '#projects', icon: Code },
-    { name: 'Blog', href: '#blog', icon: BookOpen },
+    { name: 'Knowledge Hub', href: '#blog', icon: BookOpen },
     { name: 'Experience', href: '#experience', icon: Briefcase },
     { name: 'Certifications', href: '#certifications', icon: Award },
     { name: 'Skills', href: '#skills', icon: GraduationCap },

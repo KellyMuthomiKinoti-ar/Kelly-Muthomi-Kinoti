@@ -136,6 +136,7 @@ export interface BlogPost {
   content: string;
   authorName: string;
   authorRole: string;
+  authorAvatar?: string;
   category: 'edtech' | 'web-dev' | 'cbc-math' | 'spss-research' | 'insights';
   tags: string[];
   coverImage: string;
@@ -147,6 +148,13 @@ export interface BlogPost {
   ratingSum: number;
   comments: BlogComment[];
   isFeatured?: boolean;
+  status?: 'published' | 'draft' | 'scheduled';
+  seoMetadata?: {
+    title: string;
+    description: string;
+    keywords: string[];
+  };
+  relatedSlugs?: string[];
 }
 
 export interface UserRating {
