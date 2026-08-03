@@ -33,8 +33,54 @@ import { UserRatingModal } from './components/UserRatingModal';
 
 import { INITIAL_BLOG_POSTS, INITIAL_USER_RATINGS } from './data/blogData';
 import { Certification, BlogPost, UserRating, User, BlogComment } from './types';
+import { motion, useScroll, useSpring } from 'motion/react';
+
+// Reusable Framer Motion-based page wrapper to animate the page smoothly on load without jarring
+const PageMotionWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.35,
+        ease: 'easeOut',
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+// Stable Framer Motion wrapper for individual sections, preventing any blinking or visual jarring
+const SectionMotionWrapper: React.FC<{ children: React.ReactNode; priority?: boolean }> = ({ children, priority = false }) => {
+  if (priority) {
+    return <>{children}</>;
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0.05, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '300px 0px 0px 0px' }}
+      transition={{
+        duration: 0.45,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function App() {
+  // Track scroll depth for the viewport reading progress bar
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
@@ -163,6 +209,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+      {/* Subtle Reading Progress Bar at top of viewport */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 origin-left z-[100] pointer-events-none shadow-[0_0_10px_rgba(251,191,36,0.6)]"
+        style={{ scaleX }}
+      />
+
       {/* Top Floating Navigation */}
       <HeaderNav
         onOpenResume={() => setIsResumeOpen(true)}
@@ -170,87 +222,129 @@ export default function App() {
       />
 
       {/* Main Page Layout */}
-      <main id="main-content">
-        <HeroSection
-          onOpenResume={() => setIsResumeOpen(true)}
-          onOpenCertModal={() => handleOpenCertModal()}
-        />
+      <PageMotionWrapper>
+        <main id="main-content">
+        <SectionMotionWrapper priority>
+          <HeroSection
+            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenCertModal={() => handleOpenCertModal()}
+          />
+        </SectionMotionWrapper>
 
         {/* Professional Narrative & Career Overview */}
-        <AboutSection
+        <SectionMotionWrapper priority>
+          <AboutSection
+            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenCertModal={() => handleOpenCertModal()}
+          />
+        </SectionMotionWrapper>
+
+        {/* Full-Stack Web Projects Showcase */}
+        <SectionMotionWrapper>
+          <ProjectsSection />
+        </SectionMotionWrapper>
+
+        {/* KNOWLEDGE HUB & TECHNICAL ARTICLES */}
+        <SectionMotionWrapper>
+          <BlogSection
+            posts={posts}
+            ratings={ratings}
+            currentUser={currentUser}
+            onOpenAuth={() => setIsAuthOpen(true)}
+            onOpenReader={(post) => {
+              setReadingPost(post);
+              setIsReaderOpen(true);
+            }}
+            onOpenRateModal={() => setIsRateOpen(true)}
+          />
+        </SectionMotionWrapper>
+
+        {/* Interactive CBC Lesson Plan & STEM Problem Generator */}
+        <SectionMotionWrapper>
+          <LessonPlanGenerator />
+        </SectionMotionWrapper>
+
+        {/* Web & EdTech Project Investment Calculator */}
+        <SectionMotionWrapper>
+          <ProjectCostEstimator />
+        </SectionMotionWrapper>
+
+        {/* Professional Teaching Philosophy & CBC Pillars */}
+        <SectionMotionWrapper>
+          <TeachingPhilosophySection />
+        </SectionMotionWrapper>
+
+        {/* Professional Experience Timeline */}
+        <SectionMotionWrapper>
+          <ExperienceSection />
+        </SectionMotionWrapper>
+
+        {/* Mathematics & Business Financial Calculator Sandbox */}
+        <SectionMotionWrapper>
+          <InteractiveMathSandbox />
+        </SectionMotionWrapper>
+
+        {/* Verified Certifications & Licensing */}
+        <SectionMotionWrapper>
+          <CertificationsSection
+            onOpenCertModal={handleOpenCertModal}
+          />
+        </SectionMotionWrapper>
+
+        {/* Skills Matrix & Competency Breakdown */}
+        <SectionMotionWrapper>
+          <SkillsSection />
+        </SectionMotionWrapper>
+
+        {/* Academic Research Papers & SPSS Studies */}
+        <SectionMotionWrapper>
+          <ResearchPublications />
+        </SectionMotionWrapper>
+
+        {/* Verified Institutional & Client Testimonials Wall */}
+        <SectionMotionWrapper>
+          <TestimonialsSection />
+        </SectionMotionWrapper>
+
+        {/* Interactive Analytics & Data Dashboard Demo */}
+        <SectionMotionWrapper>
+          <AnalyticsDemo />
+        </SectionMotionWrapper>
+
+        {/* Academic Education & Background */}
+        <SectionMotionWrapper>
+          <EducationSection />
+        </SectionMotionWrapper>
+
+        {/* Professional Interests & Technical Passion */}
+        <SectionMotionWrapper>
+          <InterestsSection />
+        </SectionMotionWrapper>
+
+        {/* Frequently Asked Questions Accordion */}
+        <SectionMotionWrapper>
+          <FaqSection />
+        </SectionMotionWrapper>
+
+        {/* Direct Appointment & Consultation Booking Portal */}
+        <SectionMotionWrapper>
+          <ConsultationBooking />
+        </SectionMotionWrapper>
+
+        {/* Contact Form & Direct Touch Points */}
+        <SectionMotionWrapper>
+          <ContactSection />
+        </SectionMotionWrapper>
+        </main>
+      </PageMotionWrapper>
+
+      {/* Footer */}
+      <SectionMotionWrapper>
+        <Footer
           onOpenResume={() => setIsResumeOpen(true)}
           onOpenCertModal={() => handleOpenCertModal()}
         />
-
-        {/* Full-Stack Web Projects Showcase */}
-        <ProjectsSection />
-
-        {/* KNOWLEDGE HUB & TECHNICAL ARTICLES */}
-        <BlogSection
-          posts={posts}
-          ratings={ratings}
-          currentUser={currentUser}
-          onOpenAuth={() => setIsAuthOpen(true)}
-          onOpenReader={(post) => {
-            setReadingPost(post);
-            setIsReaderOpen(true);
-          }}
-          onOpenRateModal={() => setIsRateOpen(true)}
-        />
-
-        {/* Interactive CBC Lesson Plan & STEM Problem Generator */}
-        <LessonPlanGenerator />
-
-        {/* Web & EdTech Project Investment Calculator */}
-        <ProjectCostEstimator />
-
-        {/* Professional Teaching Philosophy & CBC Pillars */}
-        <TeachingPhilosophySection />
-
-        {/* Professional Experience Timeline */}
-        <ExperienceSection />
-
-        {/* Mathematics & Business Financial Calculator Sandbox */}
-        <InteractiveMathSandbox />
-
-        {/* Verified Certifications & Licensing */}
-        <CertificationsSection
-          onOpenCertModal={handleOpenCertModal}
-        />
-
-        {/* Skills Matrix & Competency Breakdown */}
-        <SkillsSection />
-
-        {/* Academic Research Papers & SPSS Studies */}
-        <ResearchPublications />
-
-        {/* Verified Institutional & Client Testimonials Wall */}
-        <TestimonialsSection />
-
-        {/* Interactive Analytics & Data Dashboard Demo */}
-        <AnalyticsDemo />
-
-        {/* Academic Education & Background */}
-        <EducationSection />
-
-        {/* Professional Interests & Technical Passion */}
-        <InterestsSection />
-
-        {/* Frequently Asked Questions Accordion */}
-        <FaqSection />
-
-        {/* Direct Appointment & Consultation Booking Portal */}
-        <ConsultationBooking />
-
-        {/* Contact Form & Direct Touch Points */}
-        <ContactSection />
-      </main>
-
-      {/* Footer */}
-      <Footer
-        onOpenResume={() => setIsResumeOpen(true)}
-        onOpenCertModal={() => handleOpenCertModal()}
-      />
+      </SectionMotionWrapper>
 
       {/* Floating Messenger Widget */}
       <FloatingWhatsAppWidget />

@@ -21,32 +21,40 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
 
-      // Calculate scroll progress percentage
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      setScrollProgress(scrolled);
+          // Calculate scroll progress percentage
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+          setScrollProgress(scrolled);
 
-      const sections = ['hero', 'about', 'summary', 'projects', 'experience', 'certifications', 'skills', 'analytics', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 120;
+          const sections = ['hero', 'about', 'projects', 'blog', 'experience', 'certifications', 'skills', 'analytics', 'education', 'contact'];
+          const scrollPosition = window.scrollY + 120;
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const sectionHeight = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + sectionHeight) {
-            setActiveSection(section);
-            break;
+          for (const section of sections) {
+            const el = document.getElementById(section);
+            if (el) {
+              const top = el.offsetTop;
+              const sectionHeight = el.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + sectionHeight) {
+                setActiveSection(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
