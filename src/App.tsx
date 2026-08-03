@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HeaderNav } from './components/HeaderNav';
 import { HeroSection } from './components/HeroSection';
-import { SummarySection } from './components/SummarySection';
+import { AboutSection } from './components/AboutSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { CertificationsSection } from './components/CertificationsSection';
@@ -195,8 +195,11 @@ export default function App() {
           onOpenCertModal={() => handleOpenCertModal()}
         />
 
-        {/* Career Summary & Key Statistics */}
-        <SummarySection />
+        {/* Professional Narrative & Career Overview */}
+        <AboutSection
+          onOpenResume={() => setIsResumeOpen(true)}
+          onOpenCertModal={() => handleOpenCertModal()}
+        />
 
         {/* Full-Stack Web Projects Showcase */}
         <ProjectsSection />

@@ -91,9 +91,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
             </span>
             <ul className="space-y-2 text-xs font-mono">
               <li>
-                <a href="#summary" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <a href="#about" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
                   <CheckCircle2 className="w-3 h-3 text-amber-500/60" />
-                  <span>Executive Summary</span>
+                  <span>About & Overview</span>
                 </a>
               </li>
               <li>

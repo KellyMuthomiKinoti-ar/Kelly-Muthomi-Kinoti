@@ -30,7 +30,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
       const scrolled = (winScroll / height) * 100;
       setScrollProgress(scrolled);
 
-      const sections = ['hero', 'summary', 'projects', 'experience', 'certifications', 'skills', 'analytics', 'education', 'contact'];
+      const sections = ['hero', 'about', 'summary', 'projects', 'experience', 'certifications', 'skills', 'analytics', 'education', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -51,7 +51,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
   }, []);
 
   const navLinks = [
-    { name: 'Summary', href: '#summary', icon: UserCheck },
+    { name: 'About', href: '#about', icon: UserCheck },
     { name: 'Projects', href: '#projects', icon: Code },
     { name: 'Blog', href: '#blog', icon: BookOpen },
     { name: 'Experience', href: '#experience', icon: Briefcase },
