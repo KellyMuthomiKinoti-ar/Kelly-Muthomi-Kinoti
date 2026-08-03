@@ -265,7 +265,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               </span>
               <button
                 type="button"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('featured-projects')}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-semibold text-slate-200 hover:border-amber-500/40 hover:text-amber-400 transition-colors"
               >
                 <Code className="w-3.5 h-3.5 text-amber-400" />
@@ -461,7 +461,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <span>Want to see this in production?</span>
                   <button
                     type="button"
-                    onClick={() => scrollToSection('projects')}
+                    onClick={() => scrollToSection('featured-projects')}
                     className="text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1"
                   >
                     <span>View Case Studies</span>

@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <a href="#featured-projects" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
                   <Code className="w-3 h-3 text-amber-500/60" />
                   <span>Featured Projects</span>
                 </a>
@@ -188,7 +188,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href="#featured-projects"
                   className="hover:text-amber-400 transition-colors flex items-center justify-between text-slate-300"
                 >
                   <span>CBC Math Learning Portal</span>
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenCertModal })
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href="#featured-projects"
                   className="hover:text-amber-400 transition-colors flex items-center justify-between text-slate-300"
                 >
                   <span>KEMIS School ERP System</span>

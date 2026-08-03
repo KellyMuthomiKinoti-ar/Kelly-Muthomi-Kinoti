@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HeaderNav } from './components/HeaderNav';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -6,7 +6,6 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { CertificationsSection } from './components/CertificationsSection';
 import { SkillsSection } from './components/SkillsSection';
-import { AnalyticsDemo } from './components/AnalyticsDemo';
 import { EducationSection } from './components/EducationSection';
 import { InterestsSection } from './components/InterestsSection';
 import { ContactSection } from './components/ContactSection';
@@ -14,10 +13,7 @@ import { ResumeModal } from './components/ResumeModal';
 import { CertModal } from './components/CertModal';
 import { Footer } from './components/Footer';
 
-// Interactive Features & Blog Engine
-import { LessonPlanGenerator } from './components/LessonPlanGenerator';
-import { ProjectCostEstimator } from './components/ProjectCostEstimator';
-import { InteractiveMathSandbox } from './components/InteractiveMathSandbox';
+// Interactive Features & Blog Engine (Lazy Loaded for Bundle Optimization)
 import { ResearchPublications } from './components/ResearchPublications';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { TeachingPhilosophySection } from './components/TeachingPhilosophySection';
@@ -34,6 +30,43 @@ import { UserRatingModal } from './components/UserRatingModal';
 import { INITIAL_BLOG_POSTS, INITIAL_USER_RATINGS } from './data/blogData';
 import { Certification, BlogPost, UserRating, User, BlogComment } from './types';
 import { motion, useScroll, useSpring } from 'motion/react';
+
+// Lazy-loaded heavy interactive modules to reduce initial JavaScript bundle size and improve page load metrics
+const LessonPlanGenerator = lazy(() =>
+  import('./components/LessonPlanGenerator').then((module) => ({
+    default: module.LessonPlanGenerator,
+  }))
+);
+
+const ProjectCostEstimator = lazy(() =>
+  import('./components/ProjectCostEstimator').then((module) => ({
+    default: module.ProjectCostEstimator,
+  }))
+);
+
+const InteractiveMathSandbox = lazy(() =>
+  import('./components/InteractiveMathSandbox').then((module) => ({
+    default: module.InteractiveMathSandbox,
+  }))
+);
+
+const AnalyticsDemo = lazy(() =>
+  import('./components/AnalyticsDemo').then((module) => ({
+    default: module.AnalyticsDemo,
+  }))
+);
+
+// Reusable accessible loading fallback for lazy-loaded interactive modules
+const InteractiveModuleFallback: React.FC<{ title: string; subtitle?: string }> = ({
+  title,
+  subtitle = 'Loading interactive module...',
+}) => (
+  <div className="w-full max-w-6xl mx-auto my-12 p-8 sm:p-12 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm flex flex-col items-center justify-center min-h-[340px] text-center shadow-lg">
+    <div className="w-11 h-11 border-2 border-amber-500/20 border-t-amber-500 rounded-full animate-spin mb-4" />
+    <h3 className="text-lg font-semibold text-slate-200 tracking-wide">{title}</h3>
+    <p className="text-sm text-slate-400 mt-1">{subtitle}</p>
+  </div>
+);
 
 // Reusable Framer Motion-based page wrapper to animate the page smoothly on load without jarring
 const PageMotionWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -219,6 +252,7 @@ export default function App() {
       <HeaderNav
         onOpenResume={() => setIsResumeOpen(true)}
         onOpenCertModal={() => handleOpenCertModal()}
+        onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
       />
 
       {/* Main Page Layout */}
@@ -261,12 +295,30 @@ export default function App() {
 
         {/* Interactive CBC Lesson Plan & STEM Problem Generator */}
         <SectionMotionWrapper>
-          <LessonPlanGenerator />
+          <Suspense
+            fallback={
+              <InteractiveModuleFallback
+                title="CBC STEM Lesson Plan Generator"
+                subtitle="Loading interactive lesson planner & STEM problem generator..."
+              />
+            }
+          >
+            <LessonPlanGenerator />
+          </Suspense>
         </SectionMotionWrapper>
 
         {/* Web & EdTech Project Investment Calculator */}
         <SectionMotionWrapper>
-          <ProjectCostEstimator />
+          <Suspense
+            fallback={
+              <InteractiveModuleFallback
+                title="Project Cost & Architecture Estimator"
+                subtitle="Loading interactive budget calculator..."
+              />
+            }
+          >
+            <ProjectCostEstimator />
+          </Suspense>
         </SectionMotionWrapper>
 
         {/* Professional Teaching Philosophy & CBC Pillars */}
@@ -281,7 +333,16 @@ export default function App() {
 
         {/* Mathematics & Business Financial Calculator Sandbox */}
         <SectionMotionWrapper>
-          <InteractiveMathSandbox />
+          <Suspense
+            fallback={
+              <InteractiveModuleFallback
+                title="Interactive Math & Financial Sandbox"
+                subtitle="Loading STEM simulation tools & calculators..."
+              />
+            }
+          >
+            <InteractiveMathSandbox />
+          </Suspense>
         </SectionMotionWrapper>
 
         {/* Verified Certifications & Licensing */}
@@ -308,7 +369,16 @@ export default function App() {
 
         {/* Interactive Analytics & Data Dashboard Demo */}
         <SectionMotionWrapper>
-          <AnalyticsDemo />
+          <Suspense
+            fallback={
+              <InteractiveModuleFallback
+                title="Statistical Research & SPSS Analytics Demo"
+                subtitle="Loading interactive charts & data visualization tools..."
+              />
+            }
+          >
+            <AnalyticsDemo />
+          </Suspense>
         </SectionMotionWrapper>
 
         {/* Academic Education & Background */}

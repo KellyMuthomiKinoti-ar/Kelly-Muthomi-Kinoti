@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Send, Award, Briefcase, Code, GraduationCap, BarChart3, UserCheck, Search, Sparkles, Phone, Mail, BookOpen, Github } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, FileText, Send, Award, Briefcase, Code, GraduationCap, BarChart3, UserCheck, Search, Sparkles, Phone, Mail, BookOpen, Github, ChevronDown } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 // Custom WhatsApp SVG Icon
@@ -12,13 +12,26 @@ const WhatsAppIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 interface HeaderNavProps {
   onOpenResume: () => void;
   onOpenCertModal: () => void;
+  onOpenCommandPalette?: () => void;
 }
 
-export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertModal }) => {
+export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertModal, onOpenCommandPalette }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setMoreMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -73,8 +86,11 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    setMoreMenuOpen(false);
     const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
+    const element = targetId === 'projects' 
+      ? (document.getElementById('featured-projects') || document.getElementById(targetId))
+      : document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -112,12 +128,12 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
         />
       </div>
 
-      {/* Top Contact Utility Micro-Bar */}
+      {/* Top Contact Utility Micro-Bar — Wrapped for desktop responsiveness */}
       <div className="hidden md:block border-b border-slate-800/80 pb-2 mb-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-[11px] font-mono text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-y-1.5 gap-x-4 text-[11px] font-mono text-slate-400">
           
           {/* Direct Reach Icon Favicons/Logos */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <span className="text-slate-500 font-sans text-xs mr-1 font-semibold uppercase tracking-wider">Direct Reach:</span>
             
             <a
@@ -150,13 +166,13 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
             <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               Full-Stack Web Developer & STEM Educator
             </span>
-            <span className="text-slate-700">•</span>
-            <span className="text-amber-400 font-semibold">
+            <span className="text-slate-700 hidden lg:inline">•</span>
+            <span className="text-amber-400 font-semibold hidden lg:inline">
               Available for Remote & On-Site Engineering Roles
             </span>
           </div>
@@ -164,7 +180,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 sm:gap-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Logo Brand */}
           <a
@@ -190,8 +206,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
             </div>
           </a>
 
-          {/* Desktop Navigation Pills */}
-          <nav className="hidden xl:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-700/60 backdrop-blur-md shadow-inner" id="desktop-nav">
+          {/* Ultra-Wide Desktop Navigation Pills (2XL: 1536px+) */}
+          <nav className="hidden 2xl:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-700/60 backdrop-blur-md shadow-inner" id="desktop-nav-full">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
@@ -213,66 +229,119 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
             })}
           </nav>
 
-          {/* Compact Nav for Medium/Large Screens */}
-          <nav className="hidden lg:flex xl:hidden items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-700/60 backdrop-blur-md" id="desktop-nav-compact">
-            {navLinks.slice(0, 5).map((link) => {
+          {/* Standard Desktop Navigation Pills (XL: 1280px-1535px - Compact Padding) */}
+          <nav className="hidden xl:flex 2xl:hidden items-center gap-0.5 bg-slate-900/80 p-1 rounded-full border border-slate-700/60 backdrop-blur-md shadow-inner" id="desktop-nav-xl">
+            {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 flex items-center gap-1 ${
+                    isActive
+                      ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 font-bold'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
+                  }`}
+                >
+                  <link.icon className={`w-3 h-3 ${isActive ? 'text-slate-950' : 'text-amber-400/80'}`} />
+                  <span>{link.name}</span>
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Laptop & Tablet Desktop Navigation Pills (LG: 1024px-1279px - Smart Primary Tabs + Dropdown) */}
+          <nav className="hidden lg:flex xl:hidden items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-700/60 backdrop-blur-md relative" id="desktop-nav-compact" ref={dropdownRef}>
+            {navLinks.slice(0, 6).map((link) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`px-2.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex items-center gap-1 ${
                     isActive
                       ? 'bg-amber-500 text-slate-950'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
                   }`}
                 >
-                  {link.name}
+                  <link.icon className={`w-3.5 h-3.5 ${isActive ? 'text-slate-950' : 'text-amber-400/80'}`} />
+                  <span>{link.name}</span>
                 </a>
               );
             })}
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80"
-            >
-              More...
-            </a>
+
+            {/* Interactive More Dropdown Button */}
+            <div className="relative">
+              <button
+                onClick={() => setMoreMenuOpen(!moreMenuOpen)}
+                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex items-center gap-1 ${
+                  moreMenuOpen
+                    ? 'bg-slate-800 text-amber-400 border border-amber-500/40'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
+                }`}
+              >
+                <span>More</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${moreMenuOpen ? 'rotate-180 text-amber-400' : ''}`} />
+              </button>
+
+              {/* Floating Dropdown Menu for Remaining Sections */}
+              {moreMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-56 bg-slate-900/95 border border-slate-700 rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="text-[10px] font-mono text-slate-500 px-3 py-1.5 uppercase font-bold border-b border-slate-800 mb-1">
+                    Additional Sections
+                  </div>
+                  {navLinks.slice(6).map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+                    >
+                      <link.icon className="w-4 h-4 text-amber-400" />
+                      <span>{link.name}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
-          {/* Header Action CTA Buttons */}
-          <div className="hidden sm:flex items-center gap-1.5 sm:gap-2">
+          {/* Header Action CTA Buttons — Sleek & Compact */}
+          <div className="hidden sm:flex items-center gap-1.5 sm:gap-2 shrink-0">
             
-            {/* Direct Contact Icon Favicons */}
-            <a
-              href={`tel:${PERSONAL_INFO.phoneClean}`}
-              className="p-2 text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
-              title={`Call Kelly: ${PERSONAL_INFO.phone}`}
-              aria-label="Call Phone Number"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
+            {/* Direct Contact Icons visible on smaller desktop screens when top bar is hidden */}
+            <div className="flex md:hidden items-center gap-1.5">
+              <a
+                href={`tel:${PERSONAL_INFO.phoneClean}`}
+                className="p-2 text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
+                title={`Call Kelly: ${PERSONAL_INFO.phone}`}
+                aria-label="Call Phone Number"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
 
-            <a
-              href="https://wa.me/254708220323"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 text-emerald-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
-              title="WhatsApp: +254 708 220 323"
-              aria-label="Open WhatsApp Chat"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-emerald-400" />
-            </a>
+              <a
+                href="https://wa.me/254708220323"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-emerald-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
+                title="WhatsApp: +254 708 220 323"
+                aria-label="Open WhatsApp Chat"
+              >
+                <WhatsAppIcon className="w-4 h-4 fill-emerald-400" />
+              </a>
 
-            <a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              className="p-2 text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
-              title={`Email Kelly: ${PERSONAL_INFO.email}`}
-              aria-label="Send Direct Email"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
+              <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="p-2 text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center justify-center shadow-sm"
+                title={`Email Kelly: ${PERSONAL_INFO.email}`}
+                aria-label="Send Direct Email"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
 
             <a
               href={PERSONAL_INFO.github}
@@ -286,17 +355,24 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
             </a>
 
             <button
-              onClick={handleQuickSearchClick}
-              className="p-2 text-slate-400 hover:text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl transition-all flex items-center justify-center shadow-sm"
-              title="Search Projects & Tech Stack"
+              onClick={() => {
+                if (onOpenCommandPalette) {
+                  onOpenCommandPalette();
+                } else {
+                  handleQuickSearchClick();
+                }
+              }}
+              className="px-2.5 py-1.5 text-slate-400 hover:text-amber-400 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-xl transition-all flex items-center gap-1.5 shadow-sm group"
+              title="Quick Search & Command Palette (⌘K)"
               id="header-search-btn"
             >
-              <Search className="w-4 h-4" />
+              <Search className="w-3.5 h-3.5" />
+              <span className="hidden lg:inline text-[11px] font-mono font-semibold text-slate-400 group-hover:text-amber-400">⌘K</span>
             </button>
 
             <button
               onClick={onOpenCertModal}
-              className="hidden md:flex px-3 py-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-xl transition-all items-center gap-1.5 shadow-sm"
+              className="hidden md:flex px-3 py-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-xl transition-all items-center gap-1.5 shadow-sm shrink-0"
               id="header-cert-btn"
             >
               <Award className="w-3.5 h-3.5 text-amber-400" />
@@ -305,7 +381,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
 
             <button
               onClick={onOpenResume}
-              className="px-3.5 py-1.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5"
+              className="px-3.5 py-1.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5 shrink-0"
               id="header-cv-btn"
             >
               <FileText className="w-3.5 h-3.5" />
@@ -340,6 +416,20 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenResume, onOpenCertMo
             >
               <Mail className="w-4 h-4" />
             </a>
+
+            <button
+              onClick={() => {
+                if (onOpenCommandPalette) {
+                  onOpenCommandPalette();
+                } else {
+                  handleQuickSearchClick();
+                }
+              }}
+              className="p-2 text-slate-400 hover:text-amber-400 bg-slate-900 border border-slate-800 rounded-xl"
+              title="Search Projects & Tools"
+            >
+              <Search className="w-4 h-4" />
+            </button>
 
             <button
               onClick={onOpenResume}

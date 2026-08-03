@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume, onOpenCe
               <Button
                 variant="primary"
                 size="lg"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('featured-projects')}
                 icon={<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                 iconPosition="right"
                 id="hero-explore-btn"
